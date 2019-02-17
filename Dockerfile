@@ -10,7 +10,7 @@ RUN brew install git vim tmux wget curl gron parallel docker docker-compose fish
 
 # tmux conf
 RUN cd && git clone https://github.com/gpakosz/.tmux.git && ln -s -f .tmux/.tmux.conf && cp .tmux/.tmux.conf.local .
-# TODO change default shell to fish
+ENV SHELL /home/linuxbrew/.linuxbrew/bin/fish
 
 # git conf
 RUN git config --global user.name nakahararuu
