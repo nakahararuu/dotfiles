@@ -12,3 +12,5 @@
 # for istyle
 [includeIf "gitdir:~/istyle/"]
     path = ~/istyle/.gitconfig
+[ghq "https://github.com/istyle-inc"]
+    root = ~/istyle
