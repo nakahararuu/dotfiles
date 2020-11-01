@@ -1,3 +1,5 @@
+[core]
+    sshCommand = ssh -i ~/.ssh/id_rsa_istyle -F /dev/null
 [user]
     name = tsukamotota
     email = tsukamotota@istyle.co.jp
