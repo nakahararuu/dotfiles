@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 
+brew "chezmoi"
 brew "docker", link: false
 brew "docker-compose", link: false
 brew "fish"
@@ -24,7 +25,6 @@ brew "telnet"
 brew "tig"
 brew "tmux-xpanes"
 brew "vim"
-brew "chezmoi"
 
 cask "adoptopenjdk11"
 cask "alfred"
