@@ -26,6 +26,7 @@ brew "vim"
 brew "chezmoi"
 
 cask "adoptopenjdk11"
+cask "alfred"
 cask "microsoft-edge"
 cask "microsoft-remote-desktop-beta"
 cask "rectangle"
