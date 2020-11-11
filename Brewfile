@@ -6,6 +6,7 @@ tap "homebrew/core"
 
 brew "coreutils"
 brew "asdf"
+brew "bash"
 brew "chezmoi"
 brew "curl"
 brew "docker", link: false
