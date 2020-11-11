@@ -10,6 +10,7 @@ brew "docker-compose", link: false
 brew "fish"
 brew "fzf"
 brew "gawk"
+brew "gcc"
 brew "gh"
 brew "ghq"
 brew "git"
