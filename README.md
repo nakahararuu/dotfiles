@@ -1,8 +1,14 @@
 # dotfiles
 my dotfiles
 
-# install 
-The files are managed by twpayne/chezmoi. you can apply the files after installing chezmoi:
+# requirement
+- bash
+- curl
+- git
+- Homebrew
+
+# install
+exec following command on your home directory
 ```
-chezmoi init --apply --verbose https://github.com/nakahararuu/dotfiles.git
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/executable_bootstrap.sh)"
 ```
