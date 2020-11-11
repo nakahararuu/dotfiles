@@ -4,7 +4,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "twpayne/taps"
 
 brew "docker", link: false
 brew "docker-compose", link: false
@@ -23,7 +22,7 @@ brew "sd"
 brew "telnet"
 brew "tmux-xpanes"
 brew "vim"
-brew "twpayne/taps/chezmoi"
+brew "chezmoi"
 
 cask "adoptopenjdk11"
 cask "microsoft-edge"
