@@ -27,6 +27,7 @@ brew "chezmoi"
 
 cask "adoptopenjdk11"
 cask "alfred"
+cask "itsycal"
 cask "microsoft-edge"
 cask "microsoft-remote-desktop-beta"
 cask "rectangle"
