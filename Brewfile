@@ -1,5 +1,4 @@
 tap "adoptopenjdk/openjdk"
-tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
