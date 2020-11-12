@@ -7,12 +7,16 @@ brew bundle
 # dotfiles
 chezmoi init --apply --verbose https://github.com/nakahararuu/dotfiles.git
 
+# fzf
+$(brew --prefix)/opt/fzf/install --all
+
 # space vim
 curl -sLf https://spacevim.org/install.sh | bash
 
 # fisher plugins
 fish -c "curl -sL git.io/fisher | source &&
          fisher install jorgebucaran/fisher &&
+         chezmoi apply &&
          fisher update"
 
 # tmux plugins
