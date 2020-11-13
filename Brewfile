@@ -29,6 +29,7 @@ brew "vim"
 
 cask "adoptopenjdk11"
 cask "alfred"
+cask "dropbox"
 cask "itsycal"
 cask "microsoft-edge"
 cask "microsoft-remote-desktop-beta"
