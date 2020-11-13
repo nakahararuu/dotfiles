@@ -7,8 +7,8 @@ set -gx LSCOLORS gxfxcxdxbxegedabagacad
 ## nciscolourenco/done (ring when a command is done)
 set -U __done_notify_sound 1
 
-## for LinuxBrew of naahararuu/workspace
 {{ if (eq .chezmoi.os "linux" ) }}
+## for LinuxBrew of naahararuu/workspace
 set -gx PATH /home/linuxbrew/.linuxbrew/bin $PATH
 set -gx CPPFLAGS "-I/home/linuxbrew/.linuxbrew/opt/isl@0.18/include"
 set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/isl@0.18/lib"
