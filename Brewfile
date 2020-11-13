@@ -4,7 +4,10 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 
+brew "coreutils"
+brew "asdf"
 brew "chezmoi"
+brew "curl"
 brew "docker", link: false
 brew "docker-compose", link: false
 brew "fish"

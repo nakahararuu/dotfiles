@@ -14,3 +14,9 @@ set -gx CPPFLAGS "-I/home/linuxbrew/.linuxbrew/opt/isl@0.18/include"
 set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/isl@0.18/lib"
 {{ end }}
 
+## asdf (multiple runtime version manager)
+{{ if (eq .chezmoi.os "darwin" ) }}
+source /usr/local/opt/asdf/asdf.fish
+{{ else if (eq .chezmoi.os "linux" ) }}
+source /home/linuxbrew/.linuxbrew/opt/asdf/asdf.fish
+{{ end }}
