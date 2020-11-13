@@ -24,6 +24,7 @@ brew "sd"
 brew "telnet"
 brew "terminal-notifier"
 brew "tig"
+brew "tmux"
 brew "tmux-xpanes"
 brew "vim"
 
