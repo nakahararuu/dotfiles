@@ -22,6 +22,9 @@ fish -c "curl -sL git.io/fisher | source &&
 # trash-cli
 npm install -g trash-cli
 
+# cheat.sh
+fish -c "complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'"
+
 # tmux plugins
 # see https://github.com/tmux-plugins/tpm/issues/6
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
