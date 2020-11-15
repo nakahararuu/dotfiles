@@ -19,6 +19,9 @@ fish -c "curl -sL git.io/fisher | source &&
          chezmoi apply &&
          fisher update"
 
+# trash-cli
+npm install -g trash-cli
+
 # tmux plugins
 # see https://github.com/tmux-plugins/tpm/issues/6
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
