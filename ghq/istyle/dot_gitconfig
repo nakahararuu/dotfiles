@@ -1,5 +1,5 @@
-[core]
-    sshCommand = ssh -i ~/.ssh/id_rsa_istyle -F /dev/null
+[url "https://tsukamotota@github.com/"]
+    insteadOf = https://github.com/
 [user]
     name = tsukamotota
     email = tsukamotota@istyle.co.jp

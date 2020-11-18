@@ -1,5 +1,5 @@
-[core]
-    sshCommand = ssh -i ~/.ssh/id_rsa_nakahararuu -F /dev/null
+[url "https://nakahararuu@github.com/"]
+    insteadOf = https://github.com/
 [user]
     name = nakahararuu
     email = repika02@gmail.com
