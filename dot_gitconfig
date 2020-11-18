@@ -5,16 +5,18 @@
     co = checkout
 [core]
     editor = /usr/bin/vim
+[ghq]
+    root = ~/ghq/misc
 
 # for personal repositories
-[includeIf "gitdir:~/nakahararuu/"]
-    path = ~/nakahararuu/.gitconfig
+[includeIf "gitdir:~/ghq/nakahararuu/"]
+    path = ~/ghq/nakahararuu/.gitconfig
 [ghq "https://github.com/nakahararuu"]
-    root = ~/nakahararuu
+    root = ~/ghq/nakahararuu
 
 # for istyle
-[includeIf "gitdir:~/istyle/"]
-    path = ~/istyle/.gitconfig
+[includeIf "gitdir:~/ghq/istyle/"]
+    path = ~/ghq/istyle/.gitconfig
 [ghq "https://github.com/istyle-inc"]
-    root = ~/istyle
+    root = ~/ghq/istyle
 
