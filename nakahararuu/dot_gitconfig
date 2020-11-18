@@ -1,0 +1,5 @@
+[core]
+    sshCommand = ssh -i ~/.ssh/id_rsa_nakahararuu -F /dev/null
+[user]
+    name = nakahararuu
+    email = repika02@gmail.com
