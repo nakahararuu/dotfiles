@@ -5,7 +5,7 @@ curl -o ~/Brewfile https://raw.githubusercontent.com/nakahararuu/dotfiles/master
 brew bundle
 
 # dotfiles
-chezmoi init --apply --verbose https://github.com/nakahararuu/dotfiles.git
+chezmoi init --apply --verbose https://nakahararuu@github.com/nakahararuu/dotfiles.git
 
 # fzf
 $(brew --prefix)/opt/fzf/install --all

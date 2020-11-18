@@ -18,6 +18,10 @@
 [ghq "https://github.com/nakahararuu"]
     root = ~/ghq/nakahararuu
 
+# for chezmoi source directory
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+    path = ~/ghq/nakahararuu/.gitconfig
+
 # for istyle
 [includeIf "gitdir:~/ghq/istyle/"]
     path = ~/ghq/istyle/.gitconfig
