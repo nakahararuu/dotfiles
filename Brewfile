@@ -33,6 +33,7 @@ brew "terminal-notifier"
 brew "tig"
 brew "tmux"
 brew "tmux-xpanes"
+brew "up"
 brew "vim"
 
 cask "adoptopenjdk11"
