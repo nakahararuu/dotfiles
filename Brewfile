@@ -40,6 +40,7 @@ brew "vim"
 
 cask "adoptopenjdk11"
 cask "alfred"
+cask "alt-tab"
 cask "dropbox"
 cask "google-japanese-ime"
 cask "itsycal"
