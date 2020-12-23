@@ -1,0 +1,16 @@
+" TODO: easy jumpとかも有効化せねば
+set surround
+set multiple-cursors
+set commentary
+
+" 検索時にIntelliJの検索を利用する
+nnoremap / :<C-u>action Find<CR>
+
+" IntelliJのコードジャンプを利用する
+nnoremap <C-o> :<C-u>action Back<CR>
+nnoremap <C-i> :<C-u>action Forward<CR>
+nnoremap <C-S-o> <C-o>
+nnoremap <C-S-i> <C-i>
+
+" 行結合を最適化
+set ideajoin
