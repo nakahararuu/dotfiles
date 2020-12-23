@@ -10,9 +10,6 @@ chezmoi init --apply --verbose https://nakahararuu@github.com/nakahararuu/dotfil
 # fzf
 $(brew --prefix)/opt/fzf/install --all
 
-# space vim
-curl -sLf https://spacevim.org/install.sh | bash
-
 # fisher plugins
 fish -c "curl -sL git.io/fisher | source &&
          fisher install jorgebucaran/fisher &&
