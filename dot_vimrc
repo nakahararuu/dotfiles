@@ -1,0 +1,14 @@
+" look and feel
+set number
+set hlsearch
+set laststatus=2
+set nowrap
+filetype plugin indent on
+
+" search
+set ignorecase
+set smartcase
+
+" syntax highlight 
+syntax on
+
