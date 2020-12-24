@@ -1,8 +1,11 @@
 #!/bin/bash
+set -euo pipefail
 
 # homebrew-bundle
 curl -o ~/Brewfile https://raw.githubusercontent.com/nakahararuu/dotfiles/master/Brewfile
+set +e
 brew bundle
+set -e
 
 # dotfiles
 chezmoi init --apply --verbose https://nakahararuu@github.com/nakahararuu/dotfiles.git
