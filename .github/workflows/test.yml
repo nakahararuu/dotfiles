@@ -13,7 +13,7 @@ jobs:
       - name: Install required packages
         run: brew install bash
       - name: Install dotfiles
-        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/executable_bootstrap.sh)"
+        run: /bin/bash -xc "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/executable_bootstrap.sh)"
 
   install-dotfiles-on-ubuntu:
     runs-on: ubuntu-latest
@@ -23,5 +23,5 @@ jobs:
       - name: Install required packages
         run: brew install git curl bash
       - name: Install dotfiles
-        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/executable_bootstrap.sh)"
+        run: /bin/bash -xc "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/executable_bootstrap.sh)"
 

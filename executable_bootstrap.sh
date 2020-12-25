@@ -8,7 +8,7 @@ brew bundle
 set -e
 
 # dotfiles
-chezmoi init --apply --verbose https://nakahararuu@github.com/nakahararuu/dotfiles.git
+chezmoi init --apply https://nakahararuu@github.com/nakahararuu/dotfiles.git
 
 # fzf
 $(brew --prefix)/opt/fzf/install --all
