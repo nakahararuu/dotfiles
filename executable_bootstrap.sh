@@ -14,10 +14,7 @@ chezmoi init --apply --verbose https://nakahararuu@github.com/nakahararuu/dotfil
 $(brew --prefix)/opt/fzf/install --all
 
 # fisher plugins
-fish -c "curl -sL git.io/fisher | source &&
-         fisher install jorgebucaran/fisher &&
-         chezmoi apply &&
-         fisher update"
+fish -c "curl -sL git.io/fisher | source && fisher update"
 
 # trash-cli
 npm install -g trash-cli
