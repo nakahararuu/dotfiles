@@ -5,10 +5,8 @@
     co = checkout
 [core]
     editor = /usr/bin/vim
-{{ if eq .chezmoi.os "darwin" -}}
 [credential]
     helper = osxkeychain
-{{ end -}}
 [ghq]
     root = ~/ghq/misc
 [pull]
