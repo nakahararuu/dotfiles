@@ -1,14 +1,16 @@
 #!/bin/bash
 set -euo pipefail
 
+# dotfiles
+if ! chezmoi -v COMMAND &> /dev/null; then
+    brew install chezmoi
+fi
+chezmoi init --apply https://nakahararuu@github.com/nakahararuu/dotfiles.git
+
 # homebrew-bundle
-curl -o ~/Brewfile https://raw.githubusercontent.com/nakahararuu/dotfiles/master/Brewfile
 set +e
 brew bundle
 set -e
-
-# dotfiles
-chezmoi init --apply https://nakahararuu@github.com/nakahararuu/dotfiles.git
 
 # fzf
 $(brew --prefix)/opt/fzf/install --all

@@ -13,5 +13,5 @@ jobs:
       - name: Install required packages
         run: brew install bash
       - name: Install dotfiles
-        run: /bin/bash -x executable_bootstrap.sh
+        run: /bin/bash -x bootstrap.sh
 

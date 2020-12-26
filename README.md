@@ -10,5 +10,5 @@ my dotfiles for macos[catalina, big sur]
 # install
 exec following command on your home directory
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/executable_bootstrap.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/bootstrap.sh)"
 ```
