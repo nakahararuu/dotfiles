@@ -1,5 +1,5 @@
 # dotfiles
-my dotfiles
+my dotfiles for macos[catalina, big sur]
 
 # requirement
 - bash
