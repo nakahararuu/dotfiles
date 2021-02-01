@@ -1345,7 +1345,7 @@
                         "key_code": "caps_lock"
                     },
                     "to": {
-                        "key_code": "vk_none"
+                        "key_code": "left_control"
                     }
                 }
             ],
