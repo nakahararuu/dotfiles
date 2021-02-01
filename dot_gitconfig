@@ -23,11 +23,11 @@
 [includeIf "gitdir:~/.local/share/chezmoi/"]
     path = ~/ghq/nakahararuu/.gitconfig
 
-# for istyle
-[includeIf "gitdir:~/ghq/istyle/"]
-    path = ~/ghq/istyle/.gitconfig
-[ghq "https://github.com/istyle-inc"]
-    root = ~/ghq/istyle
+# for bizreach
+[includeIf "gitdir:~/ghq/biz/"]
+    path = ~/ghq/biz/.gitconfig
+[ghq "https://github.com/bizreach/"]
+    root = ~/ghq/biz
 
 # git-secret: prevent committing aws credentials
 [init]
