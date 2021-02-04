@@ -26,7 +26,7 @@
 # for bizreach
 [includeIf "gitdir:~/ghq/biz/"]
     path = ~/ghq/biz/.gitconfig
-[ghq "https://github.com/bizreach/"]
+[ghq "https://github.com/bizreach"]
     root = ~/ghq/biz
 
 # git-secret: prevent committing aws credentials
