@@ -10,5 +10,9 @@ set -U __done_notify_sound 1
 ## asdf (multiple runtime version manager)
 source /usr/local/opt/asdf/asdf.fish
 
-# trash-cli
+## trash-cli
 alias rm='trash'
+
+## direnv
+direnv hook fish | source
+
