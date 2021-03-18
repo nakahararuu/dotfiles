@@ -14,6 +14,9 @@ nnoremap <C-i> :<C-u>action Forward<CR>
 nnoremap <C-S-o> <C-o>
 nnoremap <C-S-i> <C-i>
 
+" IntelliJのコードフォーマッターを利用する
+noremap = :<C-u>action ReformatCode<CR>
+
 " 行結合を最適化
 set ideajoin
 " #####################
