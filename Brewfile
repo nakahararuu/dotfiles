@@ -41,6 +41,7 @@ brew "up"
 brew "vim"
 
 cask "adoptopenjdk11"
+brew "wget"
 cask "alfred"
 cask "alt-tab"
 cask "google-japanese-ime"
