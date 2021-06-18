@@ -14,20 +14,22 @@
     ff = only
 
 # for personal repositories
-[includeIf "gitdir:~/ghq/nakahararuu/"]
-    path = ~/ghq/nakahararuu/.gitconfig
-[ghq "https://github.com/nakahararuu"]
-    root = ~/ghq/nakahararuu
+[includeIf "gitdir:~/ghq/private/"]
+    path = ~/ghq/private/.gitconfig
+[ghq "https://github.com/{{.private.git.user}}"]
+    root = ~/ghq/private
+
+# for business repositories
+[includeIf "gitdir:~/ghq/biz/"]
+    path = ~/ghq/biz/.gitconfig
+[ghq "https://github.com/{{.biz.git.organization}}"]
+    root = ~/ghq/biz
+[ghq "ssh://git@github.com/{{.biz.git.organization}}"]
+    root = ~/ghq/biz
 
 # for chezmoi source directory
 [includeIf "gitdir:~/.local/share/chezmoi/"]
-    path = ~/ghq/nakahararuu/.gitconfig
-
-# for bizreach
-[includeIf "gitdir:~/ghq/biz/"]
-    path = ~/ghq/biz/.gitconfig
-[ghq "https://github.com/bizreach"]
-    root = ~/ghq/biz
+    path = ~/ghq/private/.gitconfig
 
 # git-secret: prevent committing aws credentials
 [init]
