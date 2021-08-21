@@ -1142,14 +1142,14 @@
                         ]
                     },
                     {
-                        "description": "Map Left Option + Spacebar to Enter",
+                        "description": "Map Left Command + Spacebar to Enter",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_alt"
+                                            "left_command"
                                         ]
                                     }
                                 },
