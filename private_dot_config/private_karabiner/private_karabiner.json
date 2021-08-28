@@ -1146,10 +1146,12 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "simultaneous": [
-                                        {"key_code": "semicolon"},
-                                        {"key_code": "left_control"}
-                                    ]
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -1157,10 +1159,7 @@
                                         "repeat": true
                                     }
                                 ],
-                                "type": "basic",
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             }
                         ]
                     }
