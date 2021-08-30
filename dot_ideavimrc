@@ -20,3 +20,15 @@ noremap = :<C-u>action ReformatCode<CR>
 " 行結合を最適化
 set ideajoin
 " #####################
+
+" #### Handlerの指定 ####
+sethandler <C-b> a:vim
+sethandler <C-d> a:vim
+sethandler <C-f> a:vim
+sethandler <C-i> a:vim
+sethandler <C-n> a:vim
+sethandler <C-o> a:vim
+sethandler <C-p> a:vim
+sethandler <C-u> a:vim
+sethandler <C-v> a:vim
+" #####################
