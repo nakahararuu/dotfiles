@@ -2,9 +2,7 @@
 my dotfiles for macos[catalina, big sur]
 
 # requirement
-- bash
-- curl
-- git
+- [chezmoi](https://github.com/twpayne/chezmoi)
 - Homebrew
 
 # install
@@ -25,5 +23,5 @@ EOF
 
 exec following command on your home directory
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nakahararuu/dotfiles/master/bootstrap.sh)"
+chezmoi init --apply --verbose https://github.com/nakahararuu/dotfiles.git
 ```
