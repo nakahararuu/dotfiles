@@ -1,3 +1,3 @@
 .github/
-bootstrap.sh
+run_once_after_install-packages.sh
 README.md
