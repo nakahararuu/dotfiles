@@ -1,3 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+set +e
+brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "adoptopenjdk/openjdk"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -61,3 +66,27 @@ cask "rectangle"
 cask "slack"
 cask "stats"
 cask "stoplight-studio"
+EOF
+set -e
+
+# fzf
+$(brew --prefix)/opt/fzf/install --all
+
+# fisher plugins
+fish -c "curl -sL git.io/fisher | source && fisher update"
+
+# trash-cli
+npm install -g trash-cli
+
+# cheat.sh
+fish -c "complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'"
+
+# tmux plugins
+# see https://github.com/tmux-plugins/tpm/issues/6
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
+tmux start-server && \
+tmux new-session -d && \
+sleep 1 && \
+~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
+tmux kill-server
+
