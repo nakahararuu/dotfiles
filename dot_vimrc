@@ -1,6 +1,8 @@
 " look and feel
 set number
 set hlsearch
+set tabstop=4
+set shiftwidth=4
 set laststatus=2
 set nowrap
 filetype plugin indent on
