@@ -9,5 +9,6 @@ use_aws_profile_with_saml(){
   profile_name=$1
   idp_account_name=$1
 
-  eval $( $(which saml2aws) script --shell=bash --skip-prompt -a ${idp_account_name} -p ${profile_name})
+  saml2aws login --skip-prompt -a ${idp_account_name} -p ${profile_name}
+  eval $( $(which saml2aws) script --shell=bash -a ${idp_account_name} -p ${profile_name})
 }
