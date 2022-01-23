@@ -16,3 +16,5 @@ alias rm='trash'
 ## direnv
 direnv hook fish | source
 
+## vimrc location
+set -gx VIMINIT ":source $HOME/.config/vim/vimrc"
