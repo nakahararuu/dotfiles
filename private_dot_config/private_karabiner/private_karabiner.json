@@ -1077,11 +1077,11 @@
                         ]
                     },
                     {
-                        "description": "Map Left_Ctrl + j to Enter",
+                        "description": "Map Left_Ctrl + Semicolon to Enter",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "semicolon",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
