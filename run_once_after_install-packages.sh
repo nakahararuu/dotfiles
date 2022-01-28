@@ -45,7 +45,7 @@ brew "tig"
 brew "tmux"
 brew "tmux-xpanes"
 brew "up"
-brew "vim"
+brew "neovim"
 
 cask "adoptopenjdk11"
 brew "wget"
