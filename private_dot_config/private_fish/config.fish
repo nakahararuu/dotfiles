@@ -24,3 +24,6 @@ set -gx EDITOR nvim
 
 ## navi keybinding assign: ctrl+g(default) to ctrl+n
 navi widget fish | sd '\\\cg' '\cn' | source
+
+## tab completions with fzf
+set -U FZF_COMPLETE 2
