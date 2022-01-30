@@ -15,3 +15,5 @@ filetype plugin indent on " ファイルタイプ・インデント検出
 set ignorecase
 set smartcase
 
+" EXモードへの切り替えを無効化
+nnoremap Q <Nop>
