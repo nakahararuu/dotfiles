@@ -4,10 +4,13 @@ set multiple-cursors
 set commentary
 " #####################
 
-" #### IntelliJの機能をVimキーバインドに割当 ####
-" 検索時にIntelliJの検索を利用する
-nnoremap / :<C-u>action Find<CR>
+" #### general ####
+set hlsearch " 検索キーワードをハイライト
+set ignorecase " 大文字と小文字を無視して検索
+set smartcase " 大文字と小文字を無視して検索
+" #####################
 
+" #### IntelliJの機能をVimキーバインドに割当 ####
 " IntelliJのコードジャンプを利用する
 nnoremap <C-o> :<C-u>action Back<CR>
 nnoremap <C-i> :<C-u>action Forward<CR>
