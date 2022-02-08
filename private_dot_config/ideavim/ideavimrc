@@ -22,6 +22,9 @@ noremap = :<C-u>action ReformatCode<CR>
 
 " 行結合を最適化
 set ideajoin
+
+" clipboard最適化
+set clipboard+=ideaput
 " #####################
 
 " #### Handlerの指定 ####
