@@ -1,7 +1,5 @@
 " #### Vim Plugins ####
 set surround
-set multiple-cursors
-set commentary
 " #####################
 
 " #### general ####
