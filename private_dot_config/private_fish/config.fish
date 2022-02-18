@@ -22,6 +22,10 @@ alias vi='nvim'
 alias vim='nvim'
 set -gx EDITOR nvim
 
+## Intellij IDEA LiteEditMode
+alias ivi='ideae'
+alias ivim='ideae'
+
 ## navi keybinding assign: ctrl+g(default) to ctrl+n
 navi widget fish | sd '\\\cg' '\cn' | source
 
