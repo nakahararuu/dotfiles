@@ -10,6 +10,7 @@ set -U __done_notify_sound 1
 ## asdf (multiple runtime version manager)
 source /usr/local/opt/asdf/asdf.fish
 set -gx ASDF_CONFIG_FILE "$HOME/.config/asdf/asdfrc"
+set -gx ASDF_NPM_DEFAULT_PACKAGES_FILE "$HOME/.config/asdf/default-npm-packages"
 
 ## trash-cli
 alias rm='trash'

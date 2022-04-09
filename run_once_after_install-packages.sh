@@ -37,7 +37,6 @@ brew "howdoi"
 brew "jq"
 brew "navi"
 brew "nkf"
-brew "node"
 brew "parallel"
 brew "ripgrep"
 brew "saml2aws"
@@ -79,8 +78,9 @@ set -e
 # fisher plugins
 fish -c "curl -sL git.io/fisher | source && fisher update"
 
-# trash-cli
-npm install -g trash-cli
+# asdf plugin & global npm packages
+set +e && asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git && set -e
+asdf install
 
 # cheat.sh
 fish -c "complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'"
