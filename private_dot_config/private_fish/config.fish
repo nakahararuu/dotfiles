@@ -13,6 +13,7 @@ set -gx ASDF_CONFIG_FILE "$HOME/.config/asdf/asdfrc"
 set -gx ASDF_NPM_DEFAULT_PACKAGES_FILE "$HOME/.config/asdf/default-npm-packages"
 
 ## aliases
+alias g ='git'                          # git
 alias rm='trash'                        # trash-cli
 alias cat='bat'                         # bat
 alias vi='nvim' && alias vim='nvim'     # neovim
