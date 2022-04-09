@@ -76,9 +76,6 @@ cask "stoplight-studio"
 EOF
 set -e
 
-# fzf
-$(brew --prefix)/opt/fzf/install --all
-
 # fisher plugins
 fish -c "curl -sL git.io/fisher | source && fisher update"
 
