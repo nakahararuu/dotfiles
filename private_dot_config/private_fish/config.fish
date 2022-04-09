@@ -12,23 +12,17 @@ source /usr/local/opt/asdf/asdf.fish
 set -gx ASDF_CONFIG_FILE "$HOME/.config/asdf/asdfrc"
 set -gx ASDF_NPM_DEFAULT_PACKAGES_FILE "$HOME/.config/asdf/default-npm-packages"
 
-## trash-cli
-alias rm='trash'
-
-## bat
-alias cat='bat'
+## aliases
+alias rm='trash'                        # trash-cli
+alias cat='bat'                         # bat
+alias vi='nvim' && alias vim='nvim'     # neovim
+alias ivi='ideae' && alias ivim='ideae' # Intellij IDEA LiteEditMode
 
 ## direnv
 direnv hook fish | source
 
-## neovim
-alias vi='nvim'
-alias vim='nvim'
+## default editor
 set -gx EDITOR nvim
-
-## Intellij IDEA LiteEditMode
-alias ivi='ideae'
-alias ivim='ideae'
 
 ## navi keybinding assign: ctrl+g(default) to ctrl+n
 navi widget fish | sd '\\\cg' '\cn' | source
