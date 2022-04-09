@@ -14,6 +14,9 @@ set -gx ASDF_CONFIG_FILE "$HOME/.config/asdf/asdfrc"
 ## trash-cli
 alias rm='trash'
 
+## bat
+alias cat='bat'
+
 ## direnv
 direnv hook fish | source
 
