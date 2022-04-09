@@ -1,8 +1,4 @@
 function fish_user_key_bindings
-  # by `$(brew --prefix)/opt/fzf/install`
-  # https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
-  fzf_key_bindings
-
   # for accepting autosuggestions in vi mode
   # https://github.com/fish-shell/fish-shell/issues/3541#issuecomment-260001906
   for mode in insert default visual
