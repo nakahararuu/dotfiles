@@ -1,7 +1,6 @@
 #!/bin/bash
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
-tap "adoptopenjdk/openjdk"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
@@ -16,7 +15,6 @@ brew "bat"
 brew "chezmoi"
 brew "curl"
 brew "fd"
-brew "python@3.9"
 brew "direnv"
 brew "docker"
 brew "docker-compose"
@@ -48,7 +46,6 @@ brew "up"
 brew "wget"
 brew "neovim"
 
-cask "adoptopenjdk11"
 cask "alfred"
 cask "alt-tab"
 cask "discord"
