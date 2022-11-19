@@ -7,66 +7,82 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "versent/taps"
 
+# aws
 brew "awscli"
-brew "coreutils"
+brew "saml2aws"
+cask "amazon-workspaces"
+cask "aws-vault"
+cask "session-manager-plugin"
+
+# dev env
 brew "asdf"
-brew "bash"
-brew "bat"
-brew "chezmoi"
-brew "curl"
-brew "fd"
 brew "direnv"
-brew "docker"
+cask "docker"
 brew "docker-compose"
-brew "diff-so-fancy"
-brew "fish"
-brew "fzf"
-brew "gawk"
 brew "gcc"
+
+# git
+brew "diff-so-fancy"
 brew "gh"
 brew "ghq"
 brew "git"
 brew "git-secrets"
-brew "gron"
-brew "hey"
+brew "tig"
+
+# terminal, shell
+cask "iterm2"
+brew "fish"
+brew "tmux"
+brew "tmux-xpanes"
+brew "terminal-notifier"
 brew "howdoi"
 brew "navi"
+
+# editors
+brew "neovim"
+cask "intellij-idea"
+cask "stoplight-studio"
+
+# CLI utils
+brew "bash"
+brew "bat"
+brew "coreutils"
+brew "curl"
+brew "fd"
+brew "fzf"
+brew "gawk"
+brew "gron"
+brew "hey"
 brew "nkf"
 brew "parallel"
 brew "ripgrep"
-brew "saml2aws"
 brew "sd"
 brew "telnet"
-brew "terminal-notifier"
-brew "tig"
-brew "tmux"
-brew "tmux-xpanes"
 brew "up"
 brew "wget"
-brew "neovim"
 
+# GUI Desktop utils
 cask "alfred"
 cask "alt-tab"
-cask "discord"
 cask "google-japanese-ime"
-cask "amazon-workspaces"
-cask "aws-vault"
-cask "docker"
 cask "hiddenbar"
-cask "intellij-idea"
-cask "iterm2"
 cask "itsycal"
-cask "jdk-mission-control"
 cask "karabiner-elements"
 cask "maccy"
-cask "microsoft-edge"
-cask "onyx"
 cask "rectangle"
-cask "session-manager-plugin"
+cask "stats"
+
+# communication tools
+cask "discord"
 cask "skitch"
 cask "slack"
-cask "stats"
-cask "stoplight-studio"
+
+# misc
+brew "chezmoi"
+cask "jdk-mission-control"
+cask "microsoft-edge"
+cask "onyx"
+
 EOF
 
 exit 0
