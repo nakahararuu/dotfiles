@@ -6,6 +6,7 @@ fish -c "curl -sL git.io/fisher | source && fisher update"
 
 # asdf plugin & global npm packages
 set +e
+asdf plugin-add jq https://github.com/AZMCode/asdf-jq.git
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add java https://github.com/halcyon/asdf-java.git
 asdf plugin-add python
