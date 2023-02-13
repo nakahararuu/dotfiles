@@ -11,9 +11,7 @@ tap "koekeishiya/formulae"
 
 # aws
 brew "awscli"
-brew "saml2aws"
 cask "aws-vault"
-cask "session-manager-plugin"
 
 # dev env
 brew "asdf"
@@ -70,7 +68,6 @@ cask "google-japanese-ime"
 cask "hiddenbar"
 cask "itsycal"
 cask "karabiner-elements"
-cask "maccy"
 cask "stats"
 
 # Window managment utils
