@@ -79,7 +79,6 @@ cask "slack"
 brew "chezmoi"
 cask "jdk-mission-control"
 cask "google-chrome"
-cask "microsoft-edge"
 
 EOF
 
