@@ -68,6 +68,7 @@ brew "wget"
 cask "alfred"
 cask "google-japanese-ime"
 cask "hiddenbar"
+cask "itsycal"
 cask "karabiner-elements"
 cask "maccy"
 cask "stats"
@@ -77,6 +78,7 @@ brew "yabai"
 brew "skhd"
 
 # communication tools
+cask "discord"
 cask "skitch"
 cask "slack"
 
@@ -84,6 +86,7 @@ cask "slack"
 brew "chezmoi"
 cask "jdk-mission-control"
 cask "google-chrome"
+cask "onyx"
 EOF
 
 brew bundle --no-lock
