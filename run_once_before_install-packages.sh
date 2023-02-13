@@ -10,7 +10,6 @@ tap "versent/taps"
 # aws
 brew "awscli"
 brew "saml2aws"
-cask "amazon-workspaces"
 cask "aws-vault"
 cask "session-manager-plugin"
 
