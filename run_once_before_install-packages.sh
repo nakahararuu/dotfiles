@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat <<EOF >> ~/Brewfile
+cat <<EOF > ~/Brewfile
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
