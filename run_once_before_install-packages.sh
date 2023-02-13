@@ -66,14 +66,12 @@ cask "alfred"
 cask "alt-tab"
 cask "google-japanese-ime"
 cask "hiddenbar"
-cask "itsycal"
 cask "karabiner-elements"
 cask "maccy"
 cask "rectangle"
 cask "stats"
 
 # communication tools
-cask "discord"
 cask "skitch"
 cask "slack"
 
@@ -81,7 +79,6 @@ cask "slack"
 brew "chezmoi"
 cask "jdk-mission-control"
 cask "microsoft-edge"
-cask "onyx"
 
 EOF
 
