@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+cat <<EOF >> ~/Brewfile
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
@@ -81,5 +81,8 @@ cask "jdk-mission-control"
 cask "microsoft-edge"
 
 EOF
+
+brew bundle --no-lock
+brew bundle cleanup --force
 
 exit 0
