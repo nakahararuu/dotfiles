@@ -36,3 +36,6 @@ set -gx EDITOR nvim
 ## navi keybinding assign: ctrl+g(default) to ctrl+n
 navi widget fish | sd '\\\cg' '\cn' | source
 
+## for signing git commits with GPG key
+set -gx GPG_TTY (tty)
+

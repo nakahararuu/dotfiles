@@ -3,5 +3,12 @@
 [user]
     name = {{.biz.git.user}}
     email = {{.biz.git.email}}
+    signingkey = {{.biz.git.signingkey}}
 [secrets]
 	providers = printenv GITHUB_TOKEN
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[tag]
+	gpgsign = true

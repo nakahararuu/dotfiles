@@ -14,6 +14,7 @@ cat << EOF > ~/.config/chezmoi/chezmoi.toml
 organization = 'hogehoge-inc'
 user = 'hoge'
 email = 'hoge@biz.co.jp'
+signingkey = 'hogehoge'
 
 [data.private.git]
 user = 'fuga'

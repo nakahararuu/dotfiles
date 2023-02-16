@@ -27,6 +27,7 @@ brew "ghq"
 brew "git"
 brew "git-secrets"
 brew "tig"
+brew "gnupg"
 
 # terminal, shell
 cask "iterm2"
