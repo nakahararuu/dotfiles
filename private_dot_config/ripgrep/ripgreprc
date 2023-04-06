@@ -1,0 +1,7 @@
+# 隠しファイルを検索対象にするが.gitディレクトリ配下は除外
+-.
+--glob=!.git/**
+
+# smart case検索
+--smart-case
+
