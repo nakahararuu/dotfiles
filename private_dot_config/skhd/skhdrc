@@ -21,7 +21,7 @@ cmd + alt - l : yabai -m window --swap east
 alt - r : yabai -m space --rotate 90
 
 # toggle window fullscreen zoom
-alt - f : yabai -m window --toggle zoom-fullscreen
+alt - z : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
 alt - e : yabai -m window --toggle split
