@@ -5,7 +5,9 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/services"
 tap "versent/taps"
+tap "koekeishiya/formulae"
 
 # aws
 brew "awscli"
@@ -64,13 +66,15 @@ brew "wget"
 
 # GUI Desktop utils
 cask "alfred"
-cask "alt-tab"
 cask "google-japanese-ime"
 cask "hiddenbar"
 cask "karabiner-elements"
 cask "maccy"
-cask "rectangle"
 cask "stats"
+
+# Window managment utils
+brew "yabai"
+brew "skhd"
 
 # communication tools
 cask "skitch"
@@ -80,10 +84,12 @@ cask "slack"
 brew "chezmoi"
 cask "jdk-mission-control"
 cask "google-chrome"
-
 EOF
 
 brew bundle --no-lock
 brew bundle cleanup --force
+
+brew services start yabai
+brew services start skhd
 
 exit 0
