@@ -12,6 +12,12 @@ alt - a ; window_control
 # from 'window_control' mode, activate mode 'default'
 window_control < return ; default
 
+
+######## define keybinds for default mode ####################
+# prevent cmd+H hide
+default < cmd - h : :
+
+
 ######## define keybinds for window_control mode ####################
 #
 # focus window
