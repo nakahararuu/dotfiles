@@ -14,6 +14,8 @@ window_control < return ; default
 
 
 ######## define keybinds for default mode ####################
+# windows like window switching
+alt - tab : yabai -m window --focus recent
 # prevent cmd+H hide
 default < cmd - h : :
 
@@ -21,7 +23,6 @@ default < cmd - h : :
 ######## define keybinds for window_control mode ####################
 #
 # focus window
-alt - tab : yabai -m window --focus recent
 window_control < h : yabai -m window --focus west  || yabai -m display --focus west
 window_control < j : yabai -m window --focus south || yabai -m display --focus south
 window_control < k : yabai -m window --focus north || yabai -m display --focus north
