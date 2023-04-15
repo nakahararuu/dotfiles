@@ -15,8 +15,10 @@ window_control < escape ; default
 
 
 ######## define keybinds for default mode ####################
-# windows like window switching
-alt - tab : yabai -m window --focus recent
+# window switching
+default < alt - tab : yabai -m window --focus recent
+default < cmd - tab : yabai -m window --focus next || yabai -m window --focus first
+
 # prevent cmd+H hide
 default < cmd - h : :
 
