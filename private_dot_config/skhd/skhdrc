@@ -11,6 +11,7 @@ alt - a ; window_control
 
 # from 'window_control' mode, activate mode 'default'
 window_control < return ; default
+window_control < escape ; default
 
 
 ######## define keybinds for default mode ####################
