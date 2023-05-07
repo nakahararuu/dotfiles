@@ -30,7 +30,6 @@ brew "tig"
 brew "gnupg"
 
 # terminal, shell
-cask "iterm2"
 cask "alacritty"
 brew "fish"
 brew "tmux"
