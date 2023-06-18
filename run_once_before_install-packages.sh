@@ -88,7 +88,7 @@ EOF
 brew bundle --no-lock
 brew bundle cleanup --force
 
-brew services restart yabai
-brew services restart skhd
+yabai --restart-service
+skhd --restart-service
 
 exit 0
