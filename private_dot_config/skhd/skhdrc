@@ -53,3 +53,8 @@ window_control < z : yabai -m window --toggle zoom-fullscreen
 # toggle window split type
 window_control < e : yabai -m window --toggle split
 
+# switch space
+window_control < ctrl - 1 -> : :
+window_control < ctrl - 2 -> : :
+window_control < ctrl - 3 -> : :
+
