@@ -6,7 +6,7 @@
 # defines a new mode 'window_control' with an on_enter command, that captures keypresses
 :: window_control @ : yabai -m config active_window_border_color 0xffff1111
 
-# from 'default' mode, activate mode 'test'
+# from 'default' mode, activate mode 'window_control'
 alt - a ; window_control
 
 # from 'window_control' mode, activate mode 'default'
