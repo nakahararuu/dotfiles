@@ -7,7 +7,6 @@ yabai -m config window_border_width          6
 yabai -m config window_border_radius         12
 yabai -m config window_border                on
 yabai -m config mouse_follows_focus          on
-yabai -m config focus_follows_mouse          autoraise
 
 
 
