@@ -41,6 +41,7 @@ brew "navi"
 # editors
 brew "neovim"
 cask "intellij-idea"
+cask "android-studio"
 cask "stoplight-studio"
 
 # CLI utils
