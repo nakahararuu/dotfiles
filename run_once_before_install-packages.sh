@@ -6,7 +6,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "versent/taps"
 tap "koekeishiya/formulae"
 
 # aws
