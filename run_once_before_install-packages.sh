@@ -6,7 +6,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
 
 # aws
 brew "awscli"
@@ -70,8 +69,8 @@ cask "karabiner-elements"
 cask "stats"
 
 # Window managment utils
-brew "yabai"
-brew "skhd"
+brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/skhd"
 
 # communication tools
 cask "discord"
