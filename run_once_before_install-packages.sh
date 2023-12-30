@@ -73,9 +73,6 @@ cask "stats"
 # Window managment utils
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
-# need Sonoma
-# https://github.com/koekeishiya/yabai/issues/1889#issuecomment-1791066779
-brew "felixkratz/formulae/borders"
 
 # communication tools
 cask "skitch"
