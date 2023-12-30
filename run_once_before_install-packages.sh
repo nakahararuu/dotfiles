@@ -71,7 +71,7 @@ cask "maccy"
 cask "stats"
 
 # Window managment utils
-brew "koekeishiya/formulae/yabai"
+brew "nakahararuu/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 
 # communication tools
