@@ -82,7 +82,6 @@ cask "slack"
 brew "chezmoi"
 cask "jdk-mission-control"
 cask "google-chrome"
-cask "onyx"
 cask "kindle"
 EOF
 
