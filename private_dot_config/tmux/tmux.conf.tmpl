@@ -25,15 +25,7 @@ set-option -g mouse on
 bind a setw synchronize-panes \; display "synchronize-panes #{?pane_synchronized,on,off}"
 
 # default shell
-{{ if eq .chezmoi.os "darwin" }}
-	{{ if eq .chezmoi.arch "arm64" }}
-		set-option -g default-shell "/opt/homebrew/bin/fish"
-	{{ else }}
-		set-option -g default-shell "/usr/local/bin/fish"
-	{{ end }}
-{{ else }}
-	set-option -g default-shell "/home/linuxbrew/.linuxbrew"
-{{ end }}
+set-option -g default-shell '{{ output "brew" "--prefix" "fish" | trim }}/bin/fish'
 
 # automatic start tmux with tmux-continuum
 set -g @continuum-boot 'on'
