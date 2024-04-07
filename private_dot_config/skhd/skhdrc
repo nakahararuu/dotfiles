@@ -1,10 +1,10 @@
 ######## define modes ####################
 #
 # add an on_enter command to the default mode
-:: default : yabai -m config active_window_border_color 0xff1122ff
+:: default : borders active_color=0xff1122ff
 
 # defines a new mode 'window_control' with an on_enter command, that captures keypresses
-:: window_control @ : yabai -m config active_window_border_color 0xffff1111
+:: window_control @ : borders active_color=0xffff1111
 
 # from 'default' mode, activate mode 'window_control'
 alt - a ; window_control

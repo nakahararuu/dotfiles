@@ -69,8 +69,9 @@ cask "karabiner-elements"
 cask "stats"
 
 # Window managment utils
-brew "nakahararuu/formulae/yabai"
+brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
+brew "felixkratz/formulae/borders"
 
 # communication tools
 cask "discord"
