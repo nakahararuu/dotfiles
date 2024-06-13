@@ -18,6 +18,9 @@ set -gx ASDF_GOLANG_MOD_VERSION_ENABLED true
 # ripgrep
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/ripgreprc"
 
+# man
+set -gx MANPAGER "col -b -x|nvim -R -c 'set ft=man nolist nomod' -"
+
 ## aliases
 alias g='git'                           # git
 alias rm='trash'                        # trash-cli
