@@ -70,6 +70,7 @@ cask "stats"
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 brew "felixkratz/formulae/borders"
+cask "homerow"
 
 # communication tools
 cask "discord"
