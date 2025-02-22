@@ -4,9 +4,8 @@
 # source (brew --prefix asdf)/share/fish/vendor_completions.d/asdf.fish
 
 set -gx ASDF_CONFIG_FILE "$HOME/.config/asdf/asdfrc"
-set -gx ASDF_NPM_DEFAULT_PACKAGES_FILE "$HOME/.config/asdf/default-npm-packages"
 
-
+# shims path
 if test -z $ASDF_DATA_DIR
     set _asdf_shims "$HOME/.asdf/shims"
 else
@@ -18,4 +17,8 @@ if not contains $_asdf_shims $PATH
     set -gx --prepend PATH $_asdf_shims
 end
 set --erase _asdf_shims
+
+# misc
+set -gx ASDF_NPM_DEFAULT_PACKAGES_FILE "$HOME/.config/asdf/default-npm-packages"
+set -gx ASDF_GOLANG_MOD_VERSION_ENABLED true
 
