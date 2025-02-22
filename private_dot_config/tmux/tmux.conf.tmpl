@@ -27,9 +27,7 @@ bind a setw synchronize-panes \; display "synchronize-panes #{?pane_synchronized
 # default shell
 set-option -g default-shell '{{ output "brew" "--prefix" "fish" | trim }}/bin/fish'
 
-# automatic start tmux with tmux-continuum
-set -g @continuum-boot 'on'
-set -g @continuum-boot-options 'alacritty'
+# saving/restoring of tmux environment
 set -g @continuum-restore 'on'
 set -g @resurrect-dir '$HOME/.local/state/resurrect'
 
