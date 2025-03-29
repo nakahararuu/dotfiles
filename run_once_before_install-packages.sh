@@ -1,6 +1,8 @@
 #!/bin/bash
 
 cat <<EOF > ~/Brewfile
+tap "koekeishiya/formulae"
+tap "felixkratz/formulae"
 
 # aws
 brew "awscli"
@@ -64,9 +66,9 @@ cask "karabiner-elements"
 cask "stats"
 
 # Window managment utils
-brew "koekeishiya/formulae/yabai"
-brew "koekeishiya/formulae/skhd"
-brew "felixkratz/formulae/borders"
+brew "yabai"
+brew "skhd"
+brew "borders"
 cask "homerow"
 
 # communication tools
