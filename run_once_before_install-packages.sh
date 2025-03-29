@@ -35,7 +35,7 @@ brew "navi"
 
 # editors
 brew "neovim"
-cask "intellij-idea"
+cask "intellij-idea-ce"
 cask "android-studio"
 cask "stoplight-studio"
 
