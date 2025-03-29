@@ -73,7 +73,6 @@ brew "skhd"
 brew "borders"
 
 # communication tools
-cask "skitch"
 cask "slack"
 
 # misc
