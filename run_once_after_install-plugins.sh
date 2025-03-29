@@ -16,3 +16,7 @@ asdf install
 # cheat.sh
 fish -c "complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'"
 
+# start background service
+yabai --start-service
+skhd --start-service
+

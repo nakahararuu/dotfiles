@@ -95,7 +95,4 @@ EOF
 brew bundle
 brew bundle cleanup --force
 
-yabai --restart-service
-skhd --restart-service
-
 exit 0
