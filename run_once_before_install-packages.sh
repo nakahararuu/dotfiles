@@ -2,7 +2,6 @@
 
 cat <<EOF > ~/Brewfile
 tap "homebrew/bundle"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 
 # aws
