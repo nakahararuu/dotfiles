@@ -1,8 +1,6 @@
 #!/bin/bash
 
 cat <<EOF > ~/Brewfile
-tap "homebrew/bundle"
-tap "homebrew/services"
 
 # aws
 brew "awscli"
