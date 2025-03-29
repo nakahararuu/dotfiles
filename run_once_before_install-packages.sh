@@ -82,7 +82,7 @@ cask "jdk-mission-control"
 cask "google-chrome"
 EOF
 
-brew bundle --no-lock
+brew bundle
 brew bundle cleanup --force
 
 yabai --restart-service
