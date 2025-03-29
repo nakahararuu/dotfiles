@@ -61,7 +61,6 @@ brew "wget"
 cask "alfred"
 cask "google-japanese-ime"
 cask "hiddenbar"
-cask "itsycal"
 cask "karabiner-elements"
 cask "stats"
 
