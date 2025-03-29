@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-10.15, macos-11.0]
+        os: [macos-14, macos-latest]
     steps:
       - uses: actions/checkout@v1
       - name: Install required packages
@@ -21,6 +21,7 @@ jobs:
           organization = 'hogehoge-inc'
           user = 'hoge'
           email = 'hoge@biz.co.jp'
+          signingkey = 'hogehoge'
 
           [data.private.git]
           user = 'fuga'
