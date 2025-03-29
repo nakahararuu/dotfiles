@@ -73,7 +73,6 @@ cask "homerow"
 
 # communication tools
 cask "discord"
-cask "skitch"
 cask "slack"
 
 # misc
