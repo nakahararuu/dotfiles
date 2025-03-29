@@ -92,7 +92,7 @@ brew "librsvg"
 brew "vips"
 EOF
 
-brew bundle --no-lock
+brew bundle
 brew bundle cleanup --force
 
 yabai --restart-service
