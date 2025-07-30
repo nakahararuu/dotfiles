@@ -14,10 +14,14 @@ set -e
 asdf install
 
 # GitHub CLI plugins
-if gh auth status >/dev/null 2>&1; then
-    gh extension install github/gh-copilot
+if command -v gh >/dev/null 2>&1; then
+    if gh auth status >/dev/null 2>&1; then
+        gh extension install github/gh-copilot
+    else
+        echo "Skipping GitHub CLI extensions: authentication required. Run 'gh auth login' first."
+    fi
 else
-    echo "Skipping GitHub CLI extensions: authentication required. Run 'gh auth login' first."
+    echo "Skipping GitHub CLI extensions: gh command not found. Install GitHub CLI first."
 fi
 
 # start background service
