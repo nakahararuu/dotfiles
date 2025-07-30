@@ -1,0 +1,16 @@
+#!/bin/bash
+
+{{ $machineType := .machineType | default "biz" }}
+
+{{ $brewfile := "bizBrewfile" }}
+{{ if eq $machineType "private" -}}
+{{   $brewfile = "privateBrewfile" }}
+{{ end -}}
+
+BREWFILE_PATH="$(chezmoi source-path)/{{ $brewfile }}"
+
+echo "Using Brewfile: $BREWFILE_PATH"
+brew bundle --file="$BREWFILE_PATH"
+brew bundle cleanup --file="$BREWFILE_PATH" --force
+
+exit 0
