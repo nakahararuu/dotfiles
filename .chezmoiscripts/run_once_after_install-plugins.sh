@@ -14,7 +14,11 @@ set -e
 asdf install
 
 # GitHub CLI plugins
-gh extension install github/gh-copilot
+if gh auth status >/dev/null 2>&1; then
+    gh extension install github/gh-copilot
+else
+    echo "Skipping GitHub CLI extensions: authentication required. Run 'gh auth login' first."
+fi
 
 # start background service
 yabai --start-service
