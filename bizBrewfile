@@ -29,8 +29,6 @@ brew "fish"
 brew "tmux"
 brew "tmux-xpanes"
 brew "terminal-notifier"
-brew "howdoi"
-brew "navi"
 
 # editors
 brew "neovim"

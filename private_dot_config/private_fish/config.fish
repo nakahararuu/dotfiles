@@ -10,6 +10,8 @@ alias rm='trash'                        # trash-cli
 alias cat='bat'                         # bat
 alias vi='nvim' && alias vim='nvim'     # neovim
 alias ivi='ideae' && alias ivim='ideae' # Intellij IDEA LiteEditMode
+alias ghcs='gh copilot suggest'         # suggest CLI command with github colipot
+alias ghce='gh copilot explain'         # explain CLI command with github colipot
 
 ## ls colors
 set -gx LSCOLORS gxfxcxdxbxegedabagacad

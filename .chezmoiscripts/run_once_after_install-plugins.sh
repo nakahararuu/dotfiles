@@ -13,8 +13,8 @@ asdf plugin add golang
 set -e
 asdf install
 
-# cheat.sh
-fish -c "complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'"
+# GitHub CLI plugins
+gh extension install github/gh-copilot
 
 # start background service
 yabai --start-service
