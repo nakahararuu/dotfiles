@@ -1,6 +1,6 @@
 #!/bin/bash
 
-{{ $machineType := .machineType | default "biz" }}
+{{ $machineType := default "biz" .machineType }}
 
 {{ $brewfile := "bizBrewfile" }}
 {{ if eq $machineType "private" -}}
