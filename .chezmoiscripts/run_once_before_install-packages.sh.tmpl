@@ -7,7 +7,7 @@
 {{   $brewfile = "privateBrewfile" }}
 {{ end -}}
 
-BREWFILE_PATH="$(chezmoi source-path)/{{ $brewfile }}"
+BREWFILE_PATH="{{ .chezmoi.sourceDir }}/{{ $brewfile }}"
 
 echo "Using Brewfile: $BREWFILE_PATH"
 brew bundle --file="$BREWFILE_PATH"
