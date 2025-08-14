@@ -1,0 +1,22 @@
+{{- $machineType   := promptStringOnce . "machineType"          "Machine Type ('biz' or 'private')" "biz"            -}}
+{{- $organization  := promptStringOnce . "biz.git.organization" "Your Organization on GitHub"       "hogehoge-inc"   -}}
+{{- $bizUser       := promptStringOnce . "biz.git.user"         "Your User Name on GitHub"          "hogehoge"       -}}
+{{- $bizEmail      := promptStringOnce . "biz.git.email"        "Your User Email on GitHub"         "hoge@biz.co.jp" -}}
+{{- $bizSigningkey := promptStringOnce . "biz.git.signingkey"   "Your SigningKey Email on GitHub"   "hogehoge"       -}}
+{{- $privateUser   := promptStringOnce . "private.git.user"     "Your User Name on GitHub"          "fugafuga"       -}}
+{{- $privateEmail  := promptStringOnce . "private.git.email"    "Your User Email on GitHub"         "fuga@biz.co.jp" -}}
+
+
+[data]
+machineType =  {{ $machineType | quote }}
+
+[data.biz.git]
+organization = {{ $organization | quote }}
+user =         {{ $bizUser | quote }}
+email =        {{ $bizEmail | quote }}
+signingkey =   {{ $bizSigningkey | quote }}
+
+[data.private.git]
+user =         {{ $privateUser | quote }}
+email =        {{ $privateEmail | quote }}
+

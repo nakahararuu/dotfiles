@@ -17,6 +17,9 @@ jobs:
       - name: create chezmoi conf file
         run: |
           cat << EOF > ~/.config/chezmoi/chezmoi.toml
+          [data]
+          machineType = 'biz'
+
           [data.biz.git]
           organization = 'hogehoge-inc'
           user = 'hoge'
