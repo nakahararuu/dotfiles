@@ -13,15 +13,6 @@ asdf plugin add golang
 set -e
 asdf install
 
-# GitHub CLI plugins
-set +e
-if gh auth status >/dev/null 2>&1; then
-    gh extension install github/gh-copilot
-else
-    echo "Skipping GitHub CLI extensions: authentication required. Run 'gh auth login' first."
-fi
-set -e
-
 # start background service
 yabai --start-service
 skhd --start-service
