@@ -15,9 +15,6 @@ asdf install nodejs 20.18.1
 set -e
 asdf install
 
-# GitHub CLI plugins
-gh extension install github/gh-copilot
-
 # start background service
 yabai --start-service
 skhd --start-service
