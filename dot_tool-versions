@@ -1,4 +1,6 @@
 nodejs 18.17.0
 python 3.8.15
-java adoptopenjdk-11.0.16+101
+java adoptopenjdk-17.0.0+35
+# なんとかせねば
+# https://github.com/halcyon/asdf-java/issues/92#issuecomment-721123303
 golang 1.21.0
