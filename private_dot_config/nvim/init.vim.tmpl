@@ -17,3 +17,6 @@ set smartcase
 
 " EXモードへの切り替えを無効化
 nnoremap Q <Nop>
+
+" filer commandでfishを利用
+set shell={{ output "brew" "--prefix" "fish" | trim }}/bin/fish
