@@ -10,6 +10,7 @@
 BREWFILE_PATH="{{ .chezmoi.sourceDir }}/{{ $brewfile }}"
 
 echo "Using Brewfile: $BREWFILE_PATH"
+sudo -v
 brew bundle --file="$BREWFILE_PATH"
 brew bundle cleanup --file="$BREWFILE_PATH" --force
 
