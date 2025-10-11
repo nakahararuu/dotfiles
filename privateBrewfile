@@ -30,7 +30,7 @@ brew "terminal-notifier"
 
 # editors
 brew "neovim"
-cask "intellij-idea-ce"
+cask "intellij-idea"
 cask "android-studio"
 cask "stoplight-studio"
 
