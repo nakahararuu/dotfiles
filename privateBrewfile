@@ -34,6 +34,11 @@ cask "intellij-idea"
 cask "android-studio"
 cask "stoplight-studio"
 
+# coding agent
+cask "copilot-cli"
+brew "gemini-cli"
+cask "claude-code"
+
 # CLI utils
 brew "bash"
 brew "bat"
