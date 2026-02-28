@@ -4,8 +4,3 @@ README.md
 AGENTS.md
 bizBrewfile
 privateBrewfile
-
-# karabiner split source files (assembled by template into karabiner.json)
-.config/karabiner/base.json
-.config/karabiner/rules
-.config/karabiner/devices
