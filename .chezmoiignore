@@ -1,5 +1,6 @@
 .github/
-run_once_after_install-packages.sh
+.chezmoiscripts/
 README.md
+AGENTS.md
 bizBrewfile
 privateBrewfile
