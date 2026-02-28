@@ -32,6 +32,7 @@ brew "terminal-notifier"
 
 # editors
 brew "neovim"
+brew "jdtls"
 cask "intellij-idea"
 cask "android-studio"
 cask "stoplight-studio"
