@@ -1,0 +1,25 @@
+{
+    "description": "Map Left_Ctrl + Semicolon to Enter",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "semicolon",
+                "modifiers": {
+                    "mandatory": [
+                        "left_control"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "return_or_enter",
+                    "repeat": true
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
