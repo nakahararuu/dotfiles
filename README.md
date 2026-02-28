@@ -1,5 +1,5 @@
 # dotfiles
-my dotfiles for macos[catalina, big sur]
+my dotfiles for macOS [Sequoia, Tahoe]
 
 # requirement
 - [chezmoi](https://github.com/twpayne/chezmoi)

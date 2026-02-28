@@ -1,11 +1,11 @@
 # AI.md - Chezmoiによるドットファイル管理プロジェクト
 
-このプロジェクトは、[chezmoi](https://github.com/twpayne/chezmoi)を使用して管理されている個人用のドットファイルリポジトリです。macOS（特にCatalina/Big Sur以降）の開発環境のセットアップと同期を自動化するように設計されており、「ビジネス（biz）」と「プライベート（private）」の両方のマシン構成をサポートしています。
+このプロジェクトは、[chezmoi](https://github.com/twpayne/chezmoi)を使用して管理されている個人用のドットファイルリポジトリです。macOS（特にSequoia/Tahoe以降）の開発環境のセットアップと同期を自動化するように設計されており、「ビジネス（biz）」と「プライベート（private）」の両方のマシン構成をサポートしています。
 
 ## プロジェクト概要
 
 *   **管理ツール:** `chezmoi`
-*   **対象OS:** macOS (Catalina/Big Sur 以降に最適化)
+*   **対象OS:** macOS (Sequoia/Tahoe 以降に最適化)
 *   **シェル:** fish shell (`fisher` プラグインマネージャーを使用)
 *   **パッケージ管理:** Homebrew (`bizBrewfile` または `privateBrewfile`)
 *   **バージョン管理:** `asdf` (Node.js, Java, Python, Go 等)
