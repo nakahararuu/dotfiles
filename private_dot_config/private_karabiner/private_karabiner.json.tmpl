@@ -16,4 +16,4 @@
 {{- $complex := index $profile "complex_modifications" -}}
 {{- $_ := set $complex "rules" $rules -}}
 {{- $_ := set $profile "devices" $devices -}}
-{{ toJson $base }}
+{{- toPrettyJson $base }}
