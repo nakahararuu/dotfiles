@@ -1,0 +1,12 @@
+{
+  "experiments": {
+    "lsp": true
+  },
+  "plugins": [
+    {
+      "id": "jdtls-lsp",
+      "enabled": true
+    }
+  ]
+}
+
