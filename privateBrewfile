@@ -3,12 +3,12 @@ tap "felixkratz/formulae"
 
 # aws
 brew "awscli"
-cask "aws-vault"
+cask "aws-vault-binary"
 
 # dev env
 brew "asdf"
 brew "direnv"
-cask "docker"
+cask "docker-desktop"
 brew "docker-compose"
 brew "gcc"
 

@@ -4,13 +4,13 @@ tap "felixkratz/formulae"
 # aws
 brew "awscli"
 brew "saml2aws"
-cask "aws-vault"
+cask "aws-vault-binary"
 cask "session-manager-plugin"
 
 # dev env
 brew "asdf"
 brew "direnv"
-cask "docker"
+cask "docker-desktop"
 brew "docker-compose"
 brew "gcc"
 
