@@ -15,6 +15,9 @@ asdf install nodejs 20.18.1
 set -e
 asdf install
 
+# claude code plugins
+claude plugin install jdtls-lsp
+
 # start background service
 yabai --start-service
 skhd --start-service
