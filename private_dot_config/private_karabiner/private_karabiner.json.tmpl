@@ -1,0 +1,18 @@
+{{- $base    := include "private_dot_config/private_karabiner/base.json" | fromJson -}}
+{{- $rule1   := include "private_dot_config/private_karabiner/rules/01_hjkl_arrows.json" | fromJson -}}
+{{- $rule2   := include "private_dot_config/private_karabiner/rules/02_mouse_keys.json" | fromJson -}}
+{{- $rule3   := include "private_dot_config/private_karabiner/rules/03_escape_eisuu.json" | fromJson -}}
+{{- $rule4   := include "private_dot_config/private_karabiner/rules/04_ctrl_bracket_escape.json" | fromJson -}}
+{{- $rule5   := include "private_dot_config/private_karabiner/rules/05_double_cmd_language.json" | fromJson -}}
+{{- $rule6   := include "private_dot_config/private_karabiner/rules/06_ctrl_semicolon_enter.json" | fromJson -}}
+{{- $rule7   := include "private_dot_config/private_karabiner/rules/07_space_shift.json" | fromJson -}}
+{{- $device1 := include "private_dot_config/private_karabiner/devices/01_vendor1278_product7.json" | fromJson -}}
+{{- $device2 := include "private_dot_config/private_karabiner/devices/02_vendor44580_product35096.json" | fromJson -}}
+{{- $device3 := include "private_dot_config/private_karabiner/devices/03_vendor9610_product96.json" | fromJson -}}
+{{- $rules   := list $rule1 $rule2 $rule3 $rule4 $rule5 $rule6 $rule7 -}}
+{{- $devices := list $device1 $device2 $device3 -}}
+{{- $profile := index $base "profiles" 0 -}}
+{{- $complex := index $profile "complex_modifications" -}}
+{{- $_ := set $complex "rules" $rules -}}
+{{- $_ := set $profile "devices" $devices -}}
+{{- toPrettyJson $base }}
