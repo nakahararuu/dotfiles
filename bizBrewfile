@@ -69,8 +69,8 @@ cask "maccy"
 cask "stats"
 
 # Window managment utils
-brew "yabai"
-brew "skhd"
+brew "yabai", restart_service: :changed
+brew "skhd", restart_service: :changed
 brew "borders"
 
 # communication tools
