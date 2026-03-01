@@ -15,6 +15,27 @@
       "id": "pr-review-toolkit",
       "enabled": true
     }
-  ]
+  ],
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.config/claude/hooks/stop-hook.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.config/claude/hooks/notification-hook.sh"
+          }
+        ]
+      }
+    ]
+  }
 }
-
