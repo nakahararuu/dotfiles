@@ -17,6 +17,8 @@ asdf install
 
 # claude code plugins
 claude plugin install jdtls-lsp
+claude plugin install code-review
+claude plugin install pr-review-toolkit
 
 # start background service
 yabai --start-service
