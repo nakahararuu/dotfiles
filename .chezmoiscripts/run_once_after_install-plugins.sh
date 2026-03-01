@@ -12,12 +12,13 @@ asdf plugin add python
 asdf plugin add golang
 asdf install nodejs 18.17.0
 asdf install nodejs 20.18.1
-set -e
-asdf install
 
 # claude code plugins
 claude plugin install jdtls-lsp
 claude plugin install code-review
 claude plugin install pr-review-toolkit
+set -e
+
+asdf install
 
 
