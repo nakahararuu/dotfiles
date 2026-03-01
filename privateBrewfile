@@ -39,6 +39,7 @@ cask "stoplight-studio"
 cask "copilot-cli"
 brew "gemini-cli"
 cask "claude-code"
+cask "claude"
 
 # CLI utils
 brew "bash"
