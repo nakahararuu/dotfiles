@@ -2,20 +2,11 @@
   "experiments": {
     "lsp": true
   },
-  "plugins": [
-    {
-      "id": "jdtls-lsp",
-      "enabled": true
-    },
-    {
-      "id": "code-review",
-      "enabled": true
-    },
-    {
-      "id": "pr-review-toolkit",
-      "enabled": true
-    }
-  ],
+  "enabledPlugins": {
+    "jdtls-lsp": true,
+    "code-review": true,
+    "pr-review-toolkit": true
+  },
   "hooks": {
     "Stop": [
       {
