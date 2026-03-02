@@ -14,9 +14,9 @@ asdf install nodejs 18.17.0
 asdf install nodejs 20.18.1
 
 # claude code plugins
-claude plugin install jdtls-lsp
-claude plugin install code-review
-claude plugin install pr-review-toolkit
+claude plugin install jdtls-lsp@claude-plugins-official
+claude plugin install code-review@claude-plugins-official
+claude plugin install pr-review-toolkit@claude-plugins-official
 set -e
 
 asdf install
