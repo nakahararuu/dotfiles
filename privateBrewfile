@@ -40,6 +40,7 @@ cask "copilot-cli"
 brew "gemini-cli"
 cask "claude-code"
 cask "claude"
+cask "codex"
 
 # CLI utils
 brew "bash"
