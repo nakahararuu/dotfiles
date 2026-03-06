@@ -41,6 +41,7 @@ cask "stoplight-studio"
 cask "copilot-cli"
 cask "claude-code"
 cask "claude"
+cask "codex"
 
 # CLI utils
 brew "bash"
