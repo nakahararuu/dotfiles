@@ -17,6 +17,7 @@ asdf install nodejs 20.18.1
 claude plugin install jdtls-lsp@claude-plugins-official
 claude plugin install code-review@claude-plugins-official
 claude plugin install pr-review-toolkit@claude-plugins-official
+claude plugin install skill-creator@claude-plugins-official
 set -e
 
 asdf install
