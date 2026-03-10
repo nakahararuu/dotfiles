@@ -41,6 +41,7 @@ brew "gemini-cli"
 cask "claude-code"
 cask "claude"
 cask "codex"
+cask "codex-app"
 
 # CLI utils
 brew "bash"
