@@ -13,3 +13,7 @@ claude plugin install skill-creator@claude-plugins-official
 set -e
 
 mise install
+
+# start background services
+yabai --start-service
+skhd --start-service
