@@ -4,8 +4,8 @@ legacy_version_file = true
 [tools]
 node = "18.17.0"
 python = "3.8.15"
-java = "java11"
+java = "java17"
 go = "1.21.0"
 
 [tool_alias.java.versions]
-java11 = "temurin-11.0.16+101"
+java17 = "openjdk-17"
