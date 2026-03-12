@@ -8,7 +8,7 @@ cask "aws-vault-binary"
 cask "session-manager-plugin"
 
 # dev env
-brew "asdf"
+brew "mise"
 brew "direnv"
 cask "docker-desktop"
 brew "docker-compose"

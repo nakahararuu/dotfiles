@@ -8,7 +8,7 @@
 *   **対象OS:** macOS (Sequoia/Tahoe 以降に最適化)
 *   **シェル:** fish shell (`fisher` プラグインマネージャーを使用)
 *   **パッケージ管理:** Homebrew (`bizBrewfile` または `privateBrewfile`)
-*   **バージョン管理:** `asdf` (Node.js, Java, Python, Go 等)
+*   **バージョン管理:** `mise` (Node.js, Java, Python, Go 等)
 *   **ウィンドウ管理:** `yabai` (タイル型ウィンドウマネージャー) と `skhd` (ホットキーデーモン)
 *   **ターミナル:** `alacritty` + `tmux`
 *   **エディタ:** Neovim および IntelliJ IDEA
@@ -18,11 +18,11 @@
 *   `.chezmoi.toml.tmpl`: `chezmoi` 設定のテンプレート。初期化時に `machineType` (biz/private) や Git の認証情報を入力します。
 *   `.chezmoiscripts/`: `chezmoi apply` 時に実行されるスクリプト群:
     *   `run_once_before_install-packages.sh.tmpl`: マシンタイプに基づいた Homebrew パッケージのインストール。
-    *   `run_once_after_install-plugins.sh`: `asdf` プラグインのセットアップ、各言語ランタイムのインストール、`fisher` の設定。
+    *   `run_once_after_install-plugins.sh`: `mise` による各言語ランタイムのインストール、`fisher` の設定。
     *   `run_enable_macos_key_repeat.sh` & `run_disable_macos_man_page_shortcuts.sh`: macOS のシステム標準設定の構成。
 *   `bizBrewfile` & `privateBrewfile`: Homebrew Bundle ファイル（CLIツール、GUIアプリ、フォント等）。
 *   `private_dot_config/`: 以下の設定ファイル群を含みます:
-    *   `alacritty`, `asdf`, `borders`, `direnv`, `git`, `ideavim`, `nvim`, `fish`, `karabiner`, `ripgrep`, `skhd`, `tmux`, `yabai`
+    *   `alacritty`, `mise`, `borders`, `direnv`, `git`, `ideavim`, `nvim`, `fish`, `karabiner`, `ripgrep`, `skhd`, `tmux`, `yabai`
 *   `ghq/`: 組織やユーザーごとに異なる Git 設定を適用するためのテンプレート。
 
 ## 使用方法とコマンド

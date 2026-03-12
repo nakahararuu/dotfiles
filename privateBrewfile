@@ -6,7 +6,7 @@ brew "awscli"
 cask "aws-vault-binary"
 
 # dev env
-brew "asdf"
+brew "mise"
 brew "direnv"
 cask "docker-desktop"
 brew "docker-compose"
