@@ -10,8 +10,10 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add java https://github.com/halcyon/asdf-java.git
 asdf plugin add python
 asdf plugin add golang
+asdf plugin add alias https://github.com/andrewthauer/asdf-alias
 asdf install nodejs 18.17.0
 asdf install nodejs 20.18.1
+asdf alias java java17 openjdk-17.0.13
 
 # claude code plugins
 claude plugin install jdtls-lsp@claude-plugins-official
