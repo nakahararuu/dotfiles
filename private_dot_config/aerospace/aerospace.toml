@@ -89,6 +89,7 @@ persistent-workspaces = ["1", "2", "3"]
     z = 'fullscreen'                  # toggle fullscreen   (≈ yabai zoom-fullscreen)
     e = 'layout horizontal vertical'  # toggle orientation  (≈ yabai rotate 90)
     b = 'balance-sizes'               # equalize window sizes (new)
+    space = 'flatten-workspace-tree'  # reset complex tree to flat layout
 
     alt-tab = 'focus dfs-next --boundaries-action wrap-around-the-workspace'
 
