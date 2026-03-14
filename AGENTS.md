@@ -9,7 +9,7 @@
 *   **シェル:** fish shell (`fisher` プラグインマネージャーを使用)
 *   **パッケージ管理:** Homebrew (`bizBrewfile` または `privateBrewfile`)
 *   **バージョン管理:** `mise` (Node.js, Java, Python, Go 等)
-*   **ウィンドウ管理:** `yabai` (タイル型ウィンドウマネージャー) と `skhd` (ホットキーデーモン)
+*   **ウィンドウ管理:** `AeroSpace` (i3ライクなタイル型ウィンドウマネージャー)
 *   **ターミナル:** `alacritty` + `tmux`
 *   **エディタ:** Neovim および IntelliJ IDEA
 
@@ -22,7 +22,7 @@
     *   `run_enable_macos_key_repeat.sh` & `run_disable_macos_man_page_shortcuts.sh`: macOS のシステム標準設定の構成。
 *   `bizBrewfile` & `privateBrewfile`: Homebrew Bundle ファイル（CLIツール、GUIアプリ、フォント等）。
 *   `private_dot_config/`: 以下の設定ファイル群を含みます:
-    *   `alacritty`, `mise`, `borders`, `direnv`, `git`, `ideavim`, `nvim`, `fish`, `karabiner`, `ripgrep`, `skhd`, `tmux`, `yabai`
+    *   `alacritty`, `aerospace`, `mise`, `borders`, `direnv`, `git`, `ideavim`, `nvim`, `fish`, `karabiner`, `ripgrep`, `tmux`
 *   `ghq/`: 組織やユーザーごとに異なる Git 設定を適用するためのテンプレート。
 
 ## 使用方法とコマンド

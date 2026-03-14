@@ -1,5 +1,5 @@
-tap "asmvik/formulae"
 tap "felixkratz/formulae"
+tap "nikitabobko/tap"
 
 # aws
 brew "awscli"
@@ -69,8 +69,7 @@ cask "karabiner-elements"
 cask "stats"
 
 # Window managment utils
-brew "yabai"
-brew "skhd"
+cask "nikitabobko/tap/aerospace"
 brew "borders"
 cask "homerow"
 

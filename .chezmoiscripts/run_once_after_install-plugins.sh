@@ -15,5 +15,6 @@ set -e
 mise install
 
 # start background services
-yabai --start-service
-skhd --start-service
+open -a AeroSpace
+sleep 2
+aerospace reload-config
