@@ -59,3 +59,4 @@ chezmoi add ~/.config/new_tool/config
 *   **非公開ファイル:** `private_` プレフィックスが付いたファイルは、制限された権限（パーミッション）で作成されます。
 *   **スクリプト:** `.chezmoiscripts/` 内のスクリプトは可能な限り冪等（何回実行しても結果が変わらない）であるべきです。初めて実行する場合や内容が変わった場合のみ実行したい場合は `run_once_` プレフィックスを使用します。
 *   **Brewfiles:** システムレベルの依存関係を追加した場合は、必ず対応する `Brewfile` を更新してください。
+*   **設定の反映:** `private_dot_config/` 配下のファイルを編集した場合、ホームディレクトリへの反映には `chezmoi apply` が必要です。AeroSpace (`aerospace.toml`) の場合は、さらに `aerospace reload-config` を実行して設定を再読み込みさせる必要があります。
