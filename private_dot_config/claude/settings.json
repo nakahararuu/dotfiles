@@ -9,6 +9,7 @@
       "Bash(git *)"
     ]
   },
+  "vim": true,
   "experiments": {
     "lsp": true
   },
