@@ -70,7 +70,7 @@ cask "stats"
 
 # Window managment utils
 cask "nikitabobko/tap/aerospace"
-brew "borders"
+brew "felixkratz/formulae/borders"
 cask "homerow"
 
 # communication tools
