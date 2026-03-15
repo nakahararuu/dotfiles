@@ -2,10 +2,8 @@
 legacy_version_file = true
 
 [tools]
-node = "18.17.0"
-python = "3.8.15"
-java = "java17"
-go = "1.21.0"
+node = "latest"
+python = "latest"
+java = "latest"
+go = "latest"
 
-[tool_alias.java.versions]
-java17 = "openjdk-17"
