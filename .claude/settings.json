@@ -4,8 +4,8 @@
       "WebSearch",
       "WebFetch",
       "Skill",
-      "Write(/**)",
-      "Edit(/**)",
+      "Write(**)",
+      "Edit(**)",
       "Bash(aerospace:*)",
       "Bash(chezmoi:*)",
       "Bash(git *)"
