@@ -4,29 +4,36 @@ globs:
   - "*Brewfile"
 ---
 
-# Brewfile における Tap と Formula の明示的な分離
+# Brewfile における Tap と Formula の扱い
 
-When editing either Brewfile, always declare third-party taps explicitly with a
-`tap` directive and use the bare formula/cask name in `brew`/`cask` directives.
-Never combine them into a fully-qualified name like `brew "user/repo/formula"`.
+## 背景
 
-**Why:** `brew bundle cleanup` treats taps not listed in the Brewfile as
-unnecessary and attempts to remove them. If a formula installed via an implicit
-tap is still present, Homebrew refuses the untap and aborts with:
-`Error: Refusing to untap <tap> because it contains the following installed formulae or casks: ...`
+`brew bundle` には tap と formula の処理順序に問題がある。
+`tap` ディレクティブを Brewfile の先頭に書いても、`brew bundle install` は
+tap の追加より先に formula のインストールを試みるため、fresh install で失敗する。
+
+## 方針: 完全修飾名 + 明示的 tap の併記
+
+**両方書く**ことで install と cleanup の両方の問題を解決する:
+
+1. `brew`/`cask` は完全修飾名を使う → fresh install が確実に動く
+2. 対応する `tap` も明示的に宣言する → `brew bundle cleanup` がtapを「不要」と判断しない
 
 ```ruby
-# Bad — implicit tap, causes cleanup errors
-brew "user/repo/my-formula"
-cask "nikitabobko/tap/aerospace"
-
-# Good — tap declared explicitly, formula/cask uses bare name
-tap "user/repo"
-brew "my-formula"
+# Good — 完全修飾名と tap 宣言を両方書く
+tap "felixkratz/formulae"
+brew "felixkratz/formulae/borders"
 
 tap "nikitabobko/tap"
-cask "aerospace"
+cask "nikitabobko/tap/aerospace"
 ```
 
-This applies to direct dependencies and to taps that are added implicitly as
-build dependencies — declare them all explicitly.
+```ruby
+# Bad — tap だけ宣言して bare name を使う（brew bundle install が失敗する）
+tap "felixkratz/formulae"
+brew "borders"
+
+# Bad — 完全修飾名のみ（brew bundle cleanup が tap を untap しようとして失敗する）
+brew "felixkratz/formulae/borders"
+cask "nikitabobko/tap/aerospace"
+```
