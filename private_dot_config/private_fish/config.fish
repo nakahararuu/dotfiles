@@ -1,6 +1,9 @@
 ## vi mode
 fish_vi_key_bindings
 
+## XDG
+set -gx XDG_CONFIG_HOME ~/.config
+
 ## default editor
 set -gx EDITOR nvim
 
