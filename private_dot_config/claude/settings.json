@@ -10,6 +10,9 @@
     ]
   },
   "vim": true,
+  "sandbox": {
+    "enabled": true
+  },
   "experiments": {
     "lsp": true
   },
