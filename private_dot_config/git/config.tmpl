@@ -21,13 +21,13 @@
 
 # for personal repositories
 [includeIf "gitdir:~/ghq/private/"]
-    path = ~/ghq/private/.gitconfig
+    path = ~/.config/git/personal_config
 [ghq "https://github.com/{{.private.git.user}}"]
     root = ~/ghq/private
 
 # for business repositories
 [includeIf "gitdir:~/ghq/biz/"]
-    path = ~/ghq/biz/.gitconfig
+    path = ~/.config/git/biz_config
 [ghq "https://github.com/{{.biz.git.organization}}"]
     root = ~/ghq/biz
 [ghq "ssh://git@github.com/{{.biz.git.organization}}"]
@@ -35,7 +35,7 @@
 
 # for chezmoi source directory
 [includeIf "gitdir:~/.local/share/chezmoi/"]
-    path = ~/ghq/private/.gitconfig
+    path = ~/.config/git/personal_config
 
 # git-secret: prevent committing aws credentials
 [init]
