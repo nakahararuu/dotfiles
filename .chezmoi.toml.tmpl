@@ -9,6 +9,7 @@
 
 [data]
 machineType =  {{ $machineType | quote }}
+configDir =    {{ joinPath .chezmoi.homeDir ".config" | quote }}
 
 [data.biz.git]
 organization = {{ $organization | quote }}

@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.config/claude/hooks/stop-hook.sh"
+            "command": "{{ .configDir }}/claude/hooks/stop-hook.sh"
           }
         ]
       }
@@ -38,7 +38,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.config/claude/hooks/notification-hook.sh"
+            "command": "{{ .configDir }}/claude/hooks/notification-hook.sh"
           }
         ]
       }

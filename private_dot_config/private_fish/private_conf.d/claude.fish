@@ -1,2 +1,2 @@
-set -gx CLAUDE_CONFIG_DIR "$HOME/.config/claude"
+set -gx CLAUDE_CONFIG_DIR "$XDG_CONFIG_HOME/claude"
 set -gx ENABLE_LSP_TOOL 1
