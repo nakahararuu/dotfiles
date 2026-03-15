@@ -1,8 +1,14 @@
 {
   "permissions": {
     "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Skill",
+      "Write(/**)",
+      "Edit(/**)",
+      "Bash(aerospace:*)",
       "Bash(chezmoi:*)",
-      "Bash(aerospace:*)"
+      "Bash(git *)"
     ]
   }
 }
