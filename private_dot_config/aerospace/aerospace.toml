@@ -27,8 +27,16 @@ on-focus-changed = ['move-mouse window-force-center']
 # Prevent cmd-h from hiding windows (replaces skhd cmd-h intercept)
 automatically-unhide-macos-hidden-apps = true
 
-# Keep workspaces 1-3 alive even when empty
-persistent-workspaces = ["1", "2", "3"]
+# Keep workspaces 1-5 alive even when empty
+persistent-workspaces = ["1", "2", "3", "4", "5"]
+
+# Pin workspaces 4-5 to the secondary monitor; 1-3 stay on main
+[workspace-to-monitor-force-assignment]
+    1 = "main"
+    2 = "main"
+    3 = "main"
+    4 = "secondary"
+    5 = "secondary"
 
 [key-mapping]
     preset = 'qwerty'
@@ -53,6 +61,8 @@ persistent-workspaces = ["1", "2", "3"]
     ctrl-1 = 'workspace 1'
     ctrl-2 = 'workspace 2'
     ctrl-3 = 'workspace 3'
+    ctrl-4 = 'workspace 4'  # secondary monitor
+    ctrl-5 = 'workspace 5'  # secondary monitor
 
 # ─── window_control mode ──────────────────────────────────────────────────────
 
@@ -97,8 +107,12 @@ persistent-workspaces = ["1", "2", "3"]
     ctrl-1 = 'workspace 1'
     ctrl-2 = 'workspace 2'
     ctrl-3 = 'workspace 3'
+    ctrl-4 = 'workspace 4'  # secondary monitor
+    ctrl-5 = 'workspace 5'  # secondary monitor
 
     # Move focused window to workspace
     ctrl-shift-1 = 'move-node-to-workspace 1'
     ctrl-shift-2 = 'move-node-to-workspace 2'
     ctrl-shift-3 = 'move-node-to-workspace 3'
+    ctrl-shift-4 = 'move-node-to-workspace 4'  # move to secondary monitor
+    ctrl-shift-5 = 'move-node-to-workspace 5'  # move to secondary monitor
