@@ -8,7 +8,13 @@
       "Edit(**)",
       "Bash(aerospace:*)",
       "Bash(chezmoi:*)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(gh *)"
     ]
+  },
+  "sandbox": {
+    "network": {
+      "allowedDomains": ["github.com", "api.github.com"]
+    }
   }
 }

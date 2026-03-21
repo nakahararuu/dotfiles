@@ -6,12 +6,16 @@
       "Skill",
       "Edit(~/ghq/**)",
       "Write(~/ghq/**)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(gh *)"
     ]
   },
   "vim": true,
   "sandbox": {
-    "enabled": true
+    "enabled": true,
+    "network": {
+      "allowedDomains": ["github.com", "api.github.com"]
+    }
   },
   "experiments": {
     "lsp": true
