@@ -76,6 +76,15 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     j = 'focus --boundaries all-monitors-outer-frame down'
     k = 'focus --boundaries all-monitors-outer-frame up'
     l = 'focus --boundaries all-monitors-outer-frame right'
+    1 = 'focus --dfs-index 0'
+    2 = 'focus --dfs-index 1'
+    3 = 'focus --dfs-index 2'
+    4 = 'focus --dfs-index 3'
+    5 = 'focus --dfs-index 4'
+    6 = 'focus --dfs-index 5'
+    7 = 'focus --dfs-index 6'
+    8 = 'focus --dfs-index 7'
+    9 = 'focus --dfs-index 8'
 
     # Resize window
     shift-h = 'resize width -100'
