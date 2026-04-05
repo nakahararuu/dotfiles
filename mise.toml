@@ -1,0 +1,7 @@
+[tasks.backup-mise-local]
+description = "~/ghq/ 配下の mise.local.toml をtarボールに固める"
+run = """
+output="$HOME/mise-local-$(date +%Y%m%d%H%M%S).tar.gz"
+find "$HOME/ghq" -name "mise.local.toml" -print0 | tar -czf "$output" --null -T -
+echo "Created: $output"
+"""
