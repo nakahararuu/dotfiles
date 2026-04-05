@@ -15,27 +15,26 @@
 [credential]
     helper = osxkeychain
 [ghq]
-    root = ~/ghq/misc
+    root = ~/ghq
 [pull]
     ff = only
 
-# for personal repositories
-[includeIf "gitdir:~/ghq/private/"]
-    path = {{ .configDir }}/git/personal_config
-[ghq "https://github.com/{{.private.git.user}}"]
-    root = ~/ghq/private
-
-# for business repositories
-[includeIf "gitdir:~/ghq/biz/"]
-    path = {{ .configDir }}/git/biz_config
-[ghq "https://github.com/{{.biz.git.organization}}"]
-    root = ~/ghq/biz
-[ghq "ssh://git@github.com/{{.biz.git.organization}}"]
-    root = ~/ghq/biz
-
-# for chezmoi source directory
-[includeIf "gitdir:~/.local/share/chezmoi/"]
-    path = {{ .configDir }}/git/personal_config
+[url "https://{{.git.user}}@github.com/"]
+    insteadOf = https://github.com/
+[user]
+    name =  {{.git.user}}
+    email = {{.git.email}}
+{{ if eq .machineType "biz" -}}
+    signingkey = {{.git.signingkey}}
+[secrets]
+	providers = printenv GITHUB_TOKEN
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[tag]
+	gpgsign = true
+{{ end -}}
 
 # git-secret: prevent committing aws credentials
 [init]

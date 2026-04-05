@@ -20,15 +20,11 @@ jobs:
           [data]
           machineType = 'biz'
 
-          [data.biz.git]
+          [data.git]
           organization = 'hogehoge-inc'
           user = 'hoge'
           email = 'hoge@biz.co.jp'
           signingkey = 'hogehoge'
-
-          [data.private.git]
-          user = 'fuga'
-          email = 'fuga@gmail.com'
           EOF
       - name: Install chezmoi
         run: brew install chezmoi

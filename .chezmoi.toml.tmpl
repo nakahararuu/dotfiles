@@ -1,23 +1,21 @@
-{{- $machineType   := promptStringOnce . "machineType"          "Machine Type ('biz' or 'private')" "biz"            -}}
-{{- $organization  := promptStringOnce . "biz.git.organization" "Your Organization on GitHub"       "hogehoge-inc"   -}}
-{{- $bizUser       := promptStringOnce . "biz.git.user"         "Your User Name on GitHub"          "hogehoge"       -}}
-{{- $bizEmail      := promptStringOnce . "biz.git.email"        "Your User Email on GitHub"         "hoge@biz.co.jp" -}}
-{{- $bizSigningkey := promptStringOnce . "biz.git.signingkey"   "Your SigningKey Email on GitHub"   "hogehoge"       -}}
-{{- $privateUser   := promptStringOnce . "private.git.user"     "Your User Name on GitHub"          "fugafuga"       -}}
-{{- $privateEmail  := promptStringOnce . "private.git.email"    "Your User Email on GitHub"         "fuga@biz.co.jp" -}}
-
+{{- $machineType := promptStringOnce . "machineType" "Machine Type ('biz' or 'private')" "biz"            -}}
+{{- $gitUser     := promptStringOnce . "git.user"    "Your User Name on GitHub"           "hogehoge"       -}}
+{{- $gitEmail    := promptStringOnce . "git.email"   "Your User Email"                    "hoge@example.com" -}}
 
 [data]
-machineType =  {{ $machineType | quote }}
-configDir =    {{ joinPath .chezmoi.homeDir ".config" | quote }}
+machineType = {{ $machineType | quote }}
+configDir =   {{ joinPath .chezmoi.homeDir ".config" | quote }}
 
-[data.biz.git]
+{{ if eq $machineType "biz" -}}
+{{- $organization := promptStringOnce . "git.organization" "Your Organization on GitHub" "hogehoge-inc" -}}
+{{- $signingkey   := promptStringOnce . "git.signingkey"   "Your GPG Signing Key"        "hogehoge"     -}}
+[data.git]
+user =         {{ $gitUser | quote }}
+email =        {{ $gitEmail | quote }}
 organization = {{ $organization | quote }}
-user =         {{ $bizUser | quote }}
-email =        {{ $bizEmail | quote }}
-signingkey =   {{ $bizSigningkey | quote }}
-
-[data.private.git]
-user =         {{ $privateUser | quote }}
-email =        {{ $privateEmail | quote }}
-
+signingkey =   {{ $signingkey | quote }}
+{{- else -}}
+[data.git]
+user =  {{ $gitUser | quote }}
+email = {{ $gitEmail | quote }}
+{{- end }}
