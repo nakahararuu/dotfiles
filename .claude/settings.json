@@ -11,10 +11,5 @@
       "Bash(git *)",
       "Bash(gh *)"
     ]
-  },
-  "sandbox": {
-    "network": {
-      "allowedDomains": ["github.com", "api.github.com"]
-    }
   }
 }
