@@ -1,3 +1,4 @@
+tap "docker/tap"
 tap "felixkratz/formulae"
 tap "nikitabobko/tap"
 
@@ -10,9 +11,13 @@ cask "session-manager-plugin"
 # dev env
 brew "mise"
 brew "direnv"
+brew "gcc"
+
+# container utils
 cask "docker-desktop"
 brew "docker-compose"
-brew "gcc"
+brew "docker"
+brew "docker/tap/sbx"
 
 # git
 brew "diff-so-fancy"
