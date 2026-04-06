@@ -17,7 +17,7 @@ brew "gcc"
 cask "docker-desktop"
 brew "docker-compose"
 brew "docker"
-brew "docker/tap/sbx"
+cask "docker/tap/sbx"
 
 # git
 brew "diff-so-fancy"
