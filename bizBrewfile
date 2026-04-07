@@ -80,6 +80,7 @@ cask "nikitabobko/tap/aerospace"
 brew "felixkratz/formulae/borders"
 
 # communication tools
+cask "gather"
 cask "slack"
 
 # misc
