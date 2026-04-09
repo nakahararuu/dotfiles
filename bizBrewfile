@@ -39,7 +39,6 @@ brew "neovim"
 brew "jdtls"
 cask "intellij-idea"
 cask "android-studio"
-cask "stoplight-studio"
 
 # coding agent
 cask "copilot-cli"
@@ -57,13 +56,8 @@ brew "fd"
 brew "fzf"
 brew "gawk"
 brew "gron"
-brew "hey"
-brew "nkf"
-brew "parallel"
 brew "ripgrep"
 brew "sd"
-brew "telnet"
-brew "up"
 brew "wget"
 
 # GUI Desktop utils
@@ -84,6 +78,5 @@ cask "slack"
 
 # misc
 brew "chezmoi"
-cask "jdk-mission-control"
 cask "google-chrome"
 
