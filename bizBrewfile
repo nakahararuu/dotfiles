@@ -4,7 +4,6 @@ tap "nikitabobko/tap"
 
 # aws
 brew "awscli"
-brew "saml2aws"
 cask "aws-vault-binary"
 cask "session-manager-plugin"
 
