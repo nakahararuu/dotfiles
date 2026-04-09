@@ -12,3 +12,9 @@ use_aws_profile_with_saml(){
   saml2aws login --skip-prompt -a ${idp_account_name} -p ${profile_name}
   eval $( $(which saml2aws) script --shell=bash -a ${idp_account_name} -p ${profile_name})
 }
+
+use_aws_profile_with_sso(){
+  sso_session=$1
+
+  aws sso login --sso-session ${sso_session}
+}
