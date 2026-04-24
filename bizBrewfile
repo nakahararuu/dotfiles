@@ -1,3 +1,4 @@
+tap "datadog-labs/pack"
 tap "docker/tap"
 tap "felixkratz/formulae"
 tap "nikitabobko/tap"
@@ -46,6 +47,9 @@ cask "claude-code"
 cask "claude"
 cask "codex"
 cask "codex-app"
+
+# datadog
+brew "datadog-labs/pack/pup"
 
 # CLI utils
 brew "bash"
