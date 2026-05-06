@@ -125,3 +125,7 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     ctrl-shift-3 = 'move-node-to-workspace 3'
     ctrl-shift-4 = 'move-node-to-workspace 4'  # move to secondary monitor
     ctrl-shift-5 = 'move-node-to-workspace 5'  # move to secondary monitor
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ScreenContinuity'
+run = 'layout tiling'
