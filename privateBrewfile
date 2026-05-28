@@ -41,7 +41,7 @@ cask "android-studio"
 
 # coding agent
 cask "copilot-cli"
-brew "gemini-cli"
+cask "antigravity-cli"
 cask "claude-code"
 cask "claude"
 cask "codex"
