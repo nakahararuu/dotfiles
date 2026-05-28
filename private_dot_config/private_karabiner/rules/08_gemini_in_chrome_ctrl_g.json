@@ -1,0 +1,34 @@
+{
+    "description": "gemini in chrome",
+    "manipulators": [
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "g",
+                "modifiers": {
+                    "mandatory": [
+                        "left_control"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "g",
+                    "modifiers": [
+                        "left_control",
+                        "left_shift",
+                        "left_option"
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                        "^com\\.google\\.Chrome$"
+                    ]
+                }
+            ]
+        }
+    ]
+}
