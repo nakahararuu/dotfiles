@@ -1,0 +1,31 @@
+{
+    "description": "Change tab to hyper key (ctrl+shift+opt+cmd) if pressed with other keys. (Post tab if pressed alone)",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "tab",
+                "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "left_command",
+                    "modifiers": [
+                        "left_control",
+                        "left_option",
+                        "left_shift"
+                    ]
+                }
+            ],
+            "to_if_alone": [
+                {
+                    "key_code": "tab"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}

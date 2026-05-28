@@ -7,10 +7,11 @@
 {{- $rule6   := include "private_dot_config/private_karabiner/rules/06_ctrl_semicolon_enter.json" | fromJson -}}
 {{- $rule7   := include "private_dot_config/private_karabiner/rules/07_space_shift.json" | fromJson -}}
 {{- $rule8   := include "private_dot_config/private_karabiner/rules/08_gemini_in_chrome_ctrl_g.json" | fromJson -}}
+{{- $rule9   := include "private_dot_config/private_karabiner/rules/09_tab_hyper.json" | fromJson -}}
 {{- $device1 := include "private_dot_config/private_karabiner/devices/01_vendor1278_product7.json" | fromJson -}}
 {{- $device2 := include "private_dot_config/private_karabiner/devices/02_vendor44580_product35096.json" | fromJson -}}
 {{- $device3 := include "private_dot_config/private_karabiner/devices/03_vendor9610_product96.json" | fromJson -}}
-{{- $rules   := list $rule1 $rule2 $rule3 $rule4 $rule5 $rule6 $rule7 $rule8 -}}
+{{- $rules   := list $rule1 $rule2 $rule3 $rule4 $rule5 $rule6 $rule7 $rule8 $rule9 -}}
 {{- $devices := list $device1 $device2 $device3 -}}
 {{- $profile := index $base "profiles" 0 -}}
 {{- $complex := index $profile "complex_modifications" -}}
