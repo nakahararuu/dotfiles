@@ -79,6 +79,9 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     ctrl-shift-alt-cmd-9 = 'focus --dfs-index 8'
     ctrl-shift-alt-cmd-0 = 'focus --dfs-index 9'
 
+    # toggle fullscreen
+    ctrl-shift-alt-cmd-z = 'fullscreen'
+
 # ─── window_control mode ──────────────────────────────────────────────────────
 
 [mode.window_control.binding]
