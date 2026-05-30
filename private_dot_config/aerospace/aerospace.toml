@@ -1,4 +1,4 @@
-# AeroSpace config - migrated from yabai + skhd
+# AeroSpace config
 # https://nikitabobko.github.io/AeroSpace/guide
 
 config-version = 2
@@ -21,7 +21,6 @@ default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
 # Move mouse to center of focused window on any focus change
-# (replicates yabai mouse_follows_focus; covers both same-monitor and cross-monitor)
 on-focus-changed = ['move-mouse window-force-center']
 
 # Prevent cmd-h from hiding windows (replaces skhd cmd-h intercept)
@@ -93,7 +92,7 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     shift-j = 'resize height +100'
     shift-k = 'resize height -100'
 
-    # Move window (crosses monitor boundary when at edge, ≈ yabai swap + display move)
+    # Move window (crosses monitor boundary when at edge)
     cmd-h = 'move --boundaries all-monitors-outer-frame left'
     cmd-j = 'move --boundaries all-monitors-outer-frame down'
     cmd-k = 'move --boundaries all-monitors-outer-frame up'
@@ -106,9 +105,9 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     alt-l = 'join-with right'
 
     # Layout controls
-    z = 'fullscreen'                  # toggle fullscreen   (≈ yabai zoom-fullscreen)
-    e = 'layout horizontal vertical'  # toggle orientation  (≈ yabai rotate 90)
-    b = 'balance-sizes'               # equalize window sizes (new)
+    z = 'fullscreen'                  # toggle fullscreen
+    e = 'layout horizontal vertical'  # toggle orientation
+    b = 'balance-sizes'               # equalize window sizes
     space = 'flatten-workspace-tree'  # reset complex tree to flat layout
 
     alt-tab = 'focus dfs-next --boundaries-action wrap-around-the-workspace'
