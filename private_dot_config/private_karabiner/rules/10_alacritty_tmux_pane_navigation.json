@@ -1,0 +1,149 @@
+{
+    "description": "Alacritty: Sync tmux pane and aerospace window navigation",
+    "manipulators": [
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "h",
+                "modifiers": {
+                    "mandatory": [
+                        "left_command",
+                        "left_control",
+                        "left_option",
+                        "left_shift"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "a",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                },
+                {
+                    "key_code": "h",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                        "^org\\.alacritty$"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "j",
+                "modifiers": {
+                    "mandatory": [
+                        "left_command",
+                        "left_control",
+                        "left_option",
+                        "left_shift"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "a",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                },
+                {
+                    "key_code": "j",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                        "^org\\.alacritty$"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "k",
+                "modifiers": {
+                    "mandatory": [
+                        "left_command",
+                        "left_control",
+                        "left_option",
+                        "left_shift"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "a",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                },
+                {
+                    "key_code": "k",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                        "^org\\.alacritty$"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "l",
+                "modifiers": {
+                    "mandatory": [
+                        "left_command",
+                        "left_control",
+                        "left_option",
+                        "left_shift"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "a",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                },
+                {
+                    "key_code": "l",
+                    "modifiers": [
+                        "left_control"
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                        "^org\\.alacritty$"
+                    ]
+                }
+            ]
+        }
+    ]
+}

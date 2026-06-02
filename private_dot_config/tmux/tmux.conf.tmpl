@@ -5,7 +5,6 @@ unbind C-b
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-pain-control'
 set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 set -g @plugin 'seebi/tmux-colors-solarized'
 set -g @plugin 'laktak/extrakto'
@@ -24,7 +23,26 @@ set-option -g mode-keys vi
 set-option -g mouse on
 
 # additional key binding
-bind a setw synchronize-panes \; display "synchronize-panes #{?pane_synchronized,on,off}"
+bind a      setw synchronize-panes \; display "synchronize-panes #{?pane_synchronized,on,off}"
+bind h      if-shell -F '#{pane_at_left}'   'run "aerospace focus --boundaries all-monitors-outer-frame left"'  'select-pane -L'
+bind j      if-shell -F '#{pane_at_bottom}' 'run "aerospace focus --boundaries all-monitors-outer-frame down"'  'select-pane -D'
+bind k      if-shell -F '#{pane_at_top}'    'run "aerospace focus --boundaries all-monitors-outer-frame up"'    'select-pane -U'
+bind l      if-shell -F '#{pane_at_right}'  'run "aerospace focus --boundaries all-monitors-outer-frame right"' 'select-pane -R'
+bind -r C-h if-shell -F '#{pane_at_left}'   'run "aerospace focus --boundaries all-monitors-outer-frame left"'  'select-pane -L'
+bind -r C-j if-shell -F '#{pane_at_bottom}' 'run "aerospace focus --boundaries all-monitors-outer-frame down"'  'select-pane -D'
+bind -r C-k if-shell -F '#{pane_at_top}'    'run "aerospace focus --boundaries all-monitors-outer-frame up"'    'select-pane -U'
+bind -r C-l if-shell -F '#{pane_at_right}'  'run "aerospace focus --boundaries all-monitors-outer-frame right"' 'select-pane -R'
+bind -r H   resize-pane -L
+bind -r J   resize-pane -D
+bind -r K   resize-pane -U
+bind -r L   resize-pane -R
+bind "\\"   split-window -h -c "#{pane_current_path}"
+bind "|"    split-window -fh -c "#{pane_current_path}"
+bind "-"    split-window -v -c "#{pane_current_path}"
+bind "_"    split-window -fv -c "#{pane_current_path}"
+bind "%"    split-window -h -c "#{pane_current_path}"
+bind '"'    split-window -v -c "#{pane_current_path}"
+bind "c"    new-window -c "#{pane_current_path}"
 
 # default shell
 set-option -g default-shell '{{ output "brew" "--prefix" "fish" | trim }}/bin/fish'
