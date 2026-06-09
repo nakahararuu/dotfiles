@@ -1,5 +1,6 @@
 " #### Vim Plugins ####
 set surround
+set VimEverywhere
 " #####################
 
 " #### general ####
