@@ -1,0 +1,3 @@
+{{- if eq .machineType "biz" -}}
+ssh-add {{ .git.signingkey }}
+{{- end -}}
