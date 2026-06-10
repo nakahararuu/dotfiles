@@ -22,20 +22,23 @@
 [url "https://{{.git.user}}@github.com/{{.git.user}}/"]
     insteadOf = https://github.com/{{.git.user}}/
 [user]
-    name =  {{.git.user}}
-    email = {{.git.email}}
-{{ if eq .machineType "biz" -}}
-    signingkey = {{.git.signingkey}}
+	name = {{ .git.user }}
+	email = {{ .git.email }}
+{{- if eq .machineType "biz" }}
+	signingkey = {{ .git.signingkey }}
+
 [secrets]
 	providers = printenv GITHUB_TOKEN
+
 [commit]
 	gpgsign = true
+
 [gpg]
 	format = ssh
 
 [tag]
 	gpgsign = true
-{{ end -}}
+{{- end }}
 
 # git-secret: prevent committing aws credentials
 [init]
