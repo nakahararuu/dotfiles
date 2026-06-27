@@ -1,7 +1,4 @@
-tap "datadog-labs/pack"
-tap "docker/tap"
-tap "felixkratz/formulae"
-tap "nikitabobko/tap"
+tap "nakahararuu/formulae", trusted: true
 
 # aws
 brew "awscli"
@@ -17,7 +14,7 @@ brew "gcc"
 cask "docker-desktop"
 brew "docker-compose"
 brew "docker"
-cask "docker/tap/sbx"
+cask "nakahararuu/formulae/sbx"
 
 # git
 brew "diff-so-fancy"
@@ -49,7 +46,7 @@ cask "codex"
 cask "codex-app"
 
 # datadog
-brew "datadog-labs/pack/pup"
+brew "nakahararuu/formulae/pup"
 
 # CLI utils
 brew "bash"
@@ -73,8 +70,8 @@ cask "maccy"
 cask "stats"
 
 # Window managment utils
-cask "nikitabobko/tap/aerospace"
-brew "felixkratz/formulae/borders"
+cask "nakahararuu/formulae/aerospace"
+brew "nakahararuu/formulae/borders"
 
 # communication tools
 cask "gather"

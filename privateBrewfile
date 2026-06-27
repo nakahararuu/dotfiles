@@ -1,6 +1,4 @@
-tap "docker/tap"
-tap "felixkratz/formulae"
-tap "nikitabobko/tap"
+tap "nakahararuu/formulae", trusted: true
 
 # aws
 brew "awscli"
@@ -15,7 +13,7 @@ brew "gcc"
 cask "docker-desktop"
 brew "docker-compose"
 brew "docker"
-cask "docker/tap/sbx"
+cask "nakahararuu/formulae/sbx"
 
 # git
 brew "diff-so-fancy"
@@ -68,8 +66,8 @@ cask "karabiner-elements"
 cask "stats"
 
 # Window managment utils
-cask "nikitabobko/tap/aerospace"
-brew "felixkratz/formulae/borders"
+cask "nakahararuu/formulae/aerospace"
+brew "nakahararuu/formulae/borders"
 cask "homerow"
 
 # communication tools
