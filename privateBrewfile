@@ -63,6 +63,7 @@ cask "alfred"
 cask "google-japanese-ime"
 cask "hiddenbar"
 cask "karabiner-elements"
+cask "maccy"
 cask "stats"
 
 # Window managment utils
