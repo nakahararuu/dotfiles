@@ -38,7 +38,6 @@ cask "intellij-idea"
 cask "android-studio"
 
 # coding agent
-cask "copilot-cli"
 cask "antigravity-cli"
 cask "claude-code"
 cask "claude"
