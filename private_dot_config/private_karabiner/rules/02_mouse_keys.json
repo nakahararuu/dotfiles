@@ -570,6 +570,25 @@
         },
         {
             "type": "basic",
+            "description": "Ignore d key in mouse mode",
+            "from": {
+                "key_code": "d",
+                "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "conditions": [
+                {
+                    "name": "mouse_keys_mode_v4",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "type": "basic",
             "description": "Passthrough left_shift",
             "from": {
                 "key_code": "left_shift",
