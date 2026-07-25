@@ -1,0 +1,5 @@
+[window]
+option_as_alt = "Both"
+
+[bell]
+command = { program = "{{ output "which" "terminal-notifier" | trim }}", args = ["-title", "Claude Code", "-message", "作業が止まりました", "-activate", "com.alacritty.Alacritty"] }
