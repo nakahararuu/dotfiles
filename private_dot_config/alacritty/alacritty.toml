@@ -1,2 +1,5 @@
 [window]
 option_as_alt = "Both"
+
+[bell]
+command = { program = "terminal-notifier", args = ["-title", "Claude Code", "-message", "作業が止まりました", "-activate", "com.alacritty.Alacritty"] }
