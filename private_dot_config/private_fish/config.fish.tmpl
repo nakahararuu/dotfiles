@@ -8,12 +8,12 @@ set -gx XDG_CONFIG_HOME "{{ .configDir }}"
 set -gx EDITOR nvim
 
 ## aliases
-alias g='git'                                             # git
-alias rm='mise exec node@20.18.1 -- trash'              # trash-cli
+alias g='git'                                           # git
+alias rm='mise exec node@26.5.0 -- trash'               # trash-cli
 alias cat='bat'                                         # bat
 alias vi='nvim' && alias vim='nvim'                     # neovim
 alias ivi='ideae' && alias ivim='ideae'                 # Intellij IDEA LiteEditMode
-alias claude='mise exec node@20.18.1 -- claude'         # claude
+alias claude='mise exec node@26.5.0 -- claude'          # claude
 
 ## ls colors
 set -gx LSCOLORS gxfxcxdxbxegedabagacad
