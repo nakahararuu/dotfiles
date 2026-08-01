@@ -106,6 +106,10 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     alt-j = 'join-with down'
     alt-k = 'join-with up'
     alt-l = 'join-with right'
+    alt-shift-h = ['join-with left',  'layout accordion']
+    alt-shift-j = ['join-with down',  'layout accordion']
+    alt-shift-k = ['join-with up',    'layout accordion']
+    alt-shift-l = ['join-with right', 'layout accordion']
 
     # Layout controls
     z = 'fullscreen'                  # toggle fullscreen
