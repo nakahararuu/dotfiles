@@ -21,6 +21,7 @@ run -b '{{ .configDir }}/tmux/plugins/tpm/tpm'
 # basic key binding
 set-option -g mode-keys vi
 set-option -g mouse on
+set -g repeat-time 1000
 
 # additional key binding
 bind a      setw synchronize-panes \; display "synchronize-panes #{?pane_synchronized,on,off}"
@@ -32,10 +33,10 @@ bind -r C-h if-shell -F '#{pane_at_left}'   'run "aerospace focus --boundaries a
 bind -r C-j if-shell -F '#{pane_at_bottom}' 'run "aerospace focus --boundaries all-monitors-outer-frame down"'  'select-pane -D'
 bind -r C-k if-shell -F '#{pane_at_top}'    'run "aerospace focus --boundaries all-monitors-outer-frame up"'    'select-pane -U'
 bind -r C-l if-shell -F '#{pane_at_right}'  'run "aerospace focus --boundaries all-monitors-outer-frame right"' 'select-pane -R'
-bind -r H   resize-pane -L
-bind -r J   resize-pane -D
-bind -r K   resize-pane -U
-bind -r L   resize-pane -R
+bind -r H   resize-pane -L 5
+bind -r J   resize-pane -D 5
+bind -r K   resize-pane -U 5
+bind -r L   resize-pane -R 5
 bind "\\"   split-window -h -c "#{pane_current_path}"
 bind "|"    split-window -fh -c "#{pane_current_path}"
 bind "-"    split-window -v -c "#{pane_current_path}"
