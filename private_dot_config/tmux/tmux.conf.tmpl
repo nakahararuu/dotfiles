@@ -21,6 +21,7 @@ run -b '{{ .configDir }}/tmux/plugins/tpm/tpm'
 # basic key binding
 set-option -g mode-keys vi
 set-option -g mouse on
+set -g repeat-time 1000
 
 # additional key binding
 bind a      setw synchronize-panes \; display "synchronize-panes #{?pane_synchronized,on,off}"
