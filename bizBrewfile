@@ -59,6 +59,7 @@ brew "gron"
 brew "ripgrep"
 brew "sd"
 brew "wget"
+brew "zx"
 
 # GUI Desktop utils
 cask "alfred"
