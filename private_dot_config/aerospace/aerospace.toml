@@ -120,11 +120,11 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     alt-tab = 'focus dfs-next --boundaries-action wrap-around-the-workspace'
 
     # Workspace switching
-    ctrl-1 = 'workspace 1'
-    ctrl-2 = 'workspace 2'
-    ctrl-3 = 'workspace 3'
-    ctrl-4 = 'workspace 4'  # secondary monitor
-    ctrl-5 = 'workspace 5'  # secondary monitor
+    ctrl-shift-alt-cmd-1 = 'workspace 1'
+    ctrl-shift-alt-cmd-2 = 'workspace 2'
+    ctrl-shift-alt-cmd-3 = 'workspace 3'
+    ctrl-shift-alt-cmd-4 = 'workspace 4'  # secondary monitor
+    ctrl-shift-alt-cmd-5 = 'workspace 5'  # secondary monitor
 
     # Window switching
     h = 'focus --boundaries all-monitors-outer-frame left'
