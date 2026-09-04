@@ -5,7 +5,7 @@ config-version = 2
 
 # Launch borders at startup with default color (blue = main mode)
 after-startup-command = [
-    'exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff'
+    'exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff 0xffffff00'
 ]
 
 start-at-login = true
@@ -52,7 +52,7 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
 
 [mode.main.binding]
     # Enter window_control mode → borders turn red
-    alt-a = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xffff1111', 'mode window_control']
+    alt-a = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xffff1111 0xffffff00', 'mode window_control']
 
     alt-tab = 'focus dfs-next --boundaries-action wrap-around-the-workspace'
 
@@ -80,14 +80,14 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     ctrl-shift-alt-cmd-0 = 'focus --dfs-index 9'
 
     # toggle fullscreen → borders turn yellow while fullscreen
-    ctrl-shift-alt-cmd-z = ['fullscreen', 'exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff']
+    ctrl-shift-alt-cmd-z = ['fullscreen', 'exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff 0xffffff00']
 
 # ─── window_control mode ──────────────────────────────────────────────────────
 
 [mode.window_control.binding]
     # Exit mode → borders back to blue
-    enter = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff', 'mode main']
-    esc   = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff', 'mode main']
+    enter = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff 0xffffff00', 'mode main']
+    esc   = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xff1122ff 0xffffff00', 'mode main']
 
     # Resize window
     shift-h = 'resize width -100'
@@ -112,7 +112,7 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     alt-shift-l = ['join-with right', 'layout accordion']
 
     # Layout controls
-    z = ['fullscreen', 'exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xffff1111']  # toggle fullscreen → yellow while fullscreen
+    z = ['fullscreen', 'exec-and-forget ~/.config/aerospace/scripts/update-borders.sh 0xffff1111 0xffffff00']  # toggle fullscreen → yellow while fullscreen
     e = 'layout horizontal vertical'  # toggle orientation
     b = 'balance-sizes'               # equalize window sizes
     space = 'flatten-workspace-tree'  # reset complex tree to flat layout
