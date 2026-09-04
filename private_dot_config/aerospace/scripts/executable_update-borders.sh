@@ -1,20 +1,22 @@
 #!/bin/bash
-# Update the `borders` app color to reflect AeroSpace state.
+# Update the `borders` app color to reflect AeroSpace's current state.
 #
-# Usage: update-borders.sh <default_active_color> <fullscreen_active_color>
+# Usage: update-borders.sh
 #
-# If the focused window is currently fullscreen (via `aerospace fullscreen`),
-# $2 is used so it stays obvious that other windows are hidden behind it.
-# Otherwise it falls back to $1, the color for the current AeroSpace mode
-# (blue = main, red = window_control).
+# Both the current binding mode and the fullscreen state of the focused
+# window are queried live from AeroSpace, so any keybinding that might
+# change either one can just call this script with no arguments and the
+# color always reflects reality.
 
-default_color="$1"
-fullscreen_color="$2"
+mode=$(aerospace list-modes --current 2>/dev/null)
+fullscreen=$(aerospace list-windows --focused --format '%{window-is-fullscreen}' 2>/dev/null)
 
-is_fullscreen=$(aerospace list-windows --focused --format '%{window-is-fullscreen}' 2>/dev/null)
-
-if [ "$is_fullscreen" = "true" ]; then
-    borders active_color="$fullscreen_color" inactive_color=0x00000000 width=5.0
+if [ "$fullscreen" = "true" ]; then
+    color=0xffffff00   # yellow — fullscreen, other windows are hidden behind it
+elif [ "$mode" = "window_control" ]; then
+    color=0xffff1111   # red — window_control mode
 else
-    borders active_color="$default_color" inactive_color=0x00000000 width=5.0
+    color=0xff1122ff   # blue — main mode
 fi
+
+borders active_color="$color" inactive_color=0x00000000 width=5.0
