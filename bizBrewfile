@@ -1,3 +1,7 @@
+# brew-bundle-last-refresh: 2026-09-07T00:00:00Z
+# ↑ GitHub Actions (.github/workflows/refresh-brew-bundle-timestamp.yml) が毎週更新する。
+#   これにより、Brewfile 本体を編集していなくても週1回 chezmoi update で brew bundle が実行される。
+
 tap "nakahararuu/formulae", trusted: true
 
 # aws
