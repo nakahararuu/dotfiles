@@ -1,13 +1,10 @@
 #!/bin/bash
-{{ $machineType := .machineType | default "biz" }}
 
+{{ $machineType := .machineType | default "biz" }}
 {{ $brewfile := "bizBrewfile" }}
 {{ if eq $machineType "private" -}}
 {{   $brewfile = "privateBrewfile" }}
 {{ end -}}
-
-# brewfileの更新の度に本スクリプトを実行する。
-# Brewfile hash: {{ include $brewfile | sha256sum }}
 
 BREWFILE_PATH="{{ .chezmoi.sourceDir }}/{{ $brewfile }}"
 
@@ -17,3 +14,9 @@ brew bundle --file="$BREWFILE_PATH"
 brew bundle cleanup --file="$BREWFILE_PATH" --force
 
 exit 0
+
+
+# ----------------
+# Brewfile hash: {{ include $brewfile | sha256sum }}
+# ↑ brewfileが更新される度に本スクリプトを実行するためのコメント
+
