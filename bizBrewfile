@@ -1,7 +1,3 @@
-# brew-bundle-last-refresh: 2026-09-07T00:00:00Z
-# ↑ .chezmoiscripts/run_onchange_before_install-packages.sh.tmpl がこのコメントをハッシュ化対象に含めている。
-#   このタイムスタンプが変わると次回 chezmoi update で brew bundle install/cleanup が再実行される。
-
 tap "nakahararuu/formulae", trusted: true
 
 # aws
