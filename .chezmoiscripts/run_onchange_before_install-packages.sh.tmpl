@@ -1,6 +1,4 @@
 #!/bin/bash
-# brewfileの更新の度に本スクリプトを実行する。
-
 {{ $machineType := .machineType | default "biz" }}
 
 {{ $brewfile := "bizBrewfile" }}
@@ -8,6 +6,7 @@
 {{   $brewfile = "privateBrewfile" }}
 {{ end -}}
 
+# brewfileの更新の度に本スクリプトを実行する。
 # Brewfile hash: {{ include $brewfile | sha256sum }}
 
 BREWFILE_PATH="{{ .chezmoi.sourceDir }}/{{ $brewfile }}"
