@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+# brewfileの更新の度に本スクリプトを実行する。
 
 {{ $machineType := .machineType | default "biz" }}
 
@@ -9,9 +9,6 @@ set -euo pipefail
 {{ end -}}
 
 # Brewfile hash: {{ include $brewfile | sha256sum }}
-# ↑ このハッシュ値をコメントに埋め込むことで、Brewfile の内容が変わる
-#   （手動編集、または GitHub Actions によるタイムスタンプの週次更新）
-#   たびに run_onchange_ スクリプトが再実行され、brew bundle install/cleanup が走る。
 
 BREWFILE_PATH="{{ .chezmoi.sourceDir }}/{{ $brewfile }}"
 

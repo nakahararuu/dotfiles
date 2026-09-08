@@ -1,10 +1,7 @@
 name: RefreshBrewBundleTimestamp
 
-# bizBrewfile / privateBrewfile 内の `# brew-bundle-last-refresh:` コメントを
-# 週1回更新する。この2ファイルは .chezmoiscripts/run_onchange_before_install-packages.sh.tmpl
-# から include + sha256sum でハッシュ化されているため、このコメントが変わると
-# 次回 `chezmoi update` 時に brew bundle install/cleanup が再実行される。
-# (Brewfile を手動編集していなくても、1週間に1回は brew bundle が走る仕組み)
+# 1週間に1回はパッケージの更新がトリガーされるようにする。
+# bizBrewfile / privateBrewfile 内の `# brew-bundle-last-refresh:` コメントを更新する。
 
 on:
   schedule:

@@ -1,6 +1,6 @@
 # brew-bundle-last-refresh: 2026-09-07T00:00:00Z
-# ↑ GitHub Actions (.github/workflows/refresh-brew-bundle-timestamp.yml) が毎週更新する。
-#   これにより、Brewfile 本体を編集していなくても週1回 chezmoi update で brew bundle が実行される。
+# ↑ .chezmoiscripts/run_onchange_before_install-packages.sh.tmpl がこのコメントをハッシュ化対象に含めている。
+#   このタイムスタンプが変わると次回 chezmoi update で brew bundle install/cleanup が再実行される。
 
 tap "nakahararuu/formulae", trusted: true
 
