@@ -1,0 +1,71 @@
+# chezmoi:template:left-delimiter="[[" right-delimiter="]]"
+# sbx env user defaults (~/.sbxenv.yaml): the "小・中規模の機能開発" sandbox from
+# https://github.com/nakahararuu/sbx-kits/wiki, so that a bare `sbx env create`
+# (create only) or `sbx env run` (create + attach) in a project builds it.
+# Spec: https://docs.docker.com/ai/sandboxes/configuration/environment-files/
+#
+# Prerequisites (host, once):
+[[- if eq .machineType "biz" ]]
+# - sbx v0.49.1+ (git-ssh-sign's ssh-agent@1 capability needs v0.48.0, and
+#   v0.49.1 keeps kit-granted SSH-agent access working across a daemon restart)
+[[- else ]]
+# - sbx v0.45+ (kit-spec v3 support)
+[[- end ]]
+# - allow the ghcr.io kit source (this replaces the whole allowlist):
+#     sbx settings set kit.allowedSources '["docker.io/","ghcr.io/nakahararuu/"]'
+# - chrome-devtools-host: launch Chrome on the host with remote debugging, see
+#   https://github.com/nakahararuu/sbx-kits/tree/main/chrome-devtools-host#readme
+[[- if eq .machineType "biz" ]]
+# - git-ssh-sign: SSH agent forwarding on (`sbx settings get
+#   ssh.agentForwardingEnabled` is true; `sbx daemon restart` after changing it).
+#   The signing key is loaded into the host agent by fish (conf.d/ssh.fish).
+[[- end ]]
+#
+# Notes:
+# - The sandbox is named sbx-kit-claude-<directory> (user defaults can't set
+#   `name`); pass --name to override.
+# - Clone mode needs the project directory to be a Git repository (and not a
+#   linked worktree). Use `sbx env create --clone=false` elsewhere.
+# - Kit changes (e.g. a newer image) only apply to newly created sandboxes:
+#   `sbx env rm` then `sbx env create`.
+# - A project-level sbxenv.yaml is merged on top (scalars override, lists such
+#   as `kits` concatenate), so it must also use v3 kits only.
+# - Passing a path (`sbx env create <path>`) skips this file.
+schemaVersion: "1"
+
+# v3 kits only compose onto a v3 workload; the built-in `claude` agent name
+# selects v2 kits. `agent` is the last path component of the workload image.
+agent: sbx-kit-claude
+
+# User defaults may only point the workspace at the project directory (or a
+# subdirectory). `clone: true` matches the wiki's `sbx create --clone`.
+workspace:
+  path: ${{ env.projectDir }}
+  clone: true
+
+kits:
+  # The Claude Code workload. Bump the tag to update Claude Code.
+  - docker.io/docker/sbx-kit-claude:2.1.267
+
+  # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
+  # (no need to build them from source).
+  - docker.io/sbx/claude-sbx-statusline:latest
+[[- if eq .machineType "biz" ]]
+  # Only biz machines sign commits on the host (private_dot_config/git), and
+  # git-ssh-sign makes commits fail outright when no signing key is available,
+  # so private machines leave it out.
+  - docker.io/sbx/git-ssh-sign:latest
+[[- end ]]
+  - docker.io/sbx/mise:latest
+  - docker.io/sbx/neovim:latest
+
+  # nakahararuu/sbx-kits kits, as the prebuilt v3 images its CI publishes from
+  # main. Git references would make sbx build them on the host, which needs a
+  # BuildKit with the OCI exporter (Docker Desktop's docker driver fails).
+  - ghcr.io/nakahararuu/sbx-kits/chrome-devtools-host:latest
+  - ghcr.io/nakahararuu/sbx-kits/claude-documentation:latest
+  - ghcr.io/nakahararuu/sbx-kits/claude-plugins-small-medium:latest
+  - ghcr.io/nakahararuu/sbx-kits/docker-amd64:latest
+  - ghcr.io/nakahararuu/sbx-kits/langfuse-claude:latest
+  - ghcr.io/nakahararuu/sbx-kits/mise-runtimes:latest
+  - ghcr.io/nakahararuu/sbx-kits/nakahararuu-claude-plugins:latest
