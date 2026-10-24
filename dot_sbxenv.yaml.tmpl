@@ -11,8 +11,8 @@
 [[- else ]]
 # - sbx v0.45+ (kit-spec v3 support)
 [[- end ]]
-# - allow the git kit source (this replaces the whole allowlist):
-#     sbx settings set kit.allowedSources '["docker.io/","github.com/nakahararuu/"]'
+# - allow the ghcr.io kit source (this replaces the whole allowlist):
+#     sbx settings set kit.allowedSources '["docker.io/","ghcr.io/nakahararuu/"]'
 # - chrome-devtools-host: launch Chrome on the host with remote debugging, see
 #   https://github.com/nakahararuu/sbx-kits/tree/main/chrome-devtools-host#readme
 [[- if eq .machineType "biz" ]]
@@ -59,11 +59,13 @@ kits:
   - docker.io/sbx/mise:latest
   - docker.io/sbx/neovim:latest
 
-  # nakahararuu/sbx-kits (kit-spec v3 on main since nakahararuu/sbx-kits#29)
-  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=chrome-devtools-host"
-  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=claude-documentation"
-  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=claude-plugins-small-medium"
-  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=docker-amd64"
-  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=langfuse-claude"
-  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=mise-runtimes"
-  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=nakahararuu-claude-plugins"
+  # nakahararuu/sbx-kits kits, as the prebuilt v3 images its CI publishes from
+  # main. Git references would make sbx build them on the host, which needs a
+  # BuildKit with the OCI exporter (Docker Desktop's docker driver fails).
+  - ghcr.io/nakahararuu/sbx-kits/chrome-devtools-host:latest
+  - ghcr.io/nakahararuu/sbx-kits/claude-documentation:latest
+  - ghcr.io/nakahararuu/sbx-kits/claude-plugins-small-medium:latest
+  - ghcr.io/nakahararuu/sbx-kits/docker-amd64:latest
+  - ghcr.io/nakahararuu/sbx-kits/langfuse-claude:latest
+  - ghcr.io/nakahararuu/sbx-kits/mise-runtimes:latest
+  - ghcr.io/nakahararuu/sbx-kits/nakahararuu-claude-plugins:latest
