@@ -10,7 +10,7 @@
 *   **パッケージ管理:** Homebrew (`bizBrewfile` または `privateBrewfile`)
 *   **バージョン管理:** `mise` (Node.js, Java, Python, Go 等)
 *   **ウィンドウ管理:** `AeroSpace` (i3ライクなタイル型ウィンドウマネージャー)
-*   **ターミナル:** `alacritty` + `tmux`
+*   **ターミナル:** `ghostty` + `tmux`
 *   **エディタ:** Neovim および IntelliJ IDEA
 
 ## 主要なディレクトリとファイル
@@ -22,7 +22,7 @@
     *   `run_enable_macos_key_repeat.sh` & `run_disable_macos_man_page_shortcuts.sh`: macOS のシステム標準設定の構成。
 *   `bizBrewfile` & `privateBrewfile`: Homebrew Bundle ファイル（CLIツール、GUIアプリ、フォント等）。
 *   `private_dot_config/`: 以下の設定ファイル群を含みます:
-    *   `alacritty`, `aerospace`, `mise`, `borders`, `direnv`, `git`, `ideavim`, `nvim`, `fish`, `karabiner`, `ripgrep`, `tmux`
+    *   `ghostty`, `aerospace`, `mise`, `borders`, `direnv`, `git`, `ideavim`, `nvim`, `fish`, `karabiner`, `ripgrep`, `tmux`
 *   `ghq/`: 組織やユーザーごとに異なる Git 設定を適用するためのテンプレート。
 *   `dot_sbxenv.yaml.tmpl`: Docker Sandboxes の `sbx env` 用ユーザーデフォルト（`~/.sbxenv.yaml`）。引数なしの `sbx env create` で [sbx-kits wiki](https://github.com/nakahararuu/sbx-kits/wiki) の「小・中規模の機能開発」サンドボックスを作成します。`machineType` が `biz` のときだけコミット署名用の `git-ssh-sign` kit を含めます。sbx の `${{ ... }}` 記法と衝突しないよう、chezmoi のテンプレート区切りを `[[ ]]` に変えています。前提条件はファイル先頭のコメントを参照してください。
 

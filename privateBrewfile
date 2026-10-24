@@ -25,7 +25,7 @@ brew "tig"
 brew "gnupg"
 
 # terminal, shell
-cask "alacritty"
+cask "ghostty"
 brew "fish"
 brew "tmux"
 brew "tmux-xpanes"
