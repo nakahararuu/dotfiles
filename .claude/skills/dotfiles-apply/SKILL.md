@@ -24,4 +24,4 @@ Editing a file in this chezmoi repo only changes the source. To actually apply c
 | fish | `private_dot_config/private_fish/` | `source ~/.config/fish/config.fish` |
 | Other | anything else | (none — `chezmoi apply` is sufficient) |
 
-For tools not in this list (git, Neovim, Alacritty, ripgrep, etc.), changes take effect automatically on next launch — no reload needed.
+For tools not in this list (git, Neovim, Ghostty, ripgrep, etc.), changes take effect automatically on next launch — no reload needed.

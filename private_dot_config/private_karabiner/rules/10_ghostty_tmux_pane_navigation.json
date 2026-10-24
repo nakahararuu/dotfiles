@@ -1,5 +1,5 @@
 {
-    "description": "Alacritty: Sync tmux pane and aerospace window navigation",
+    "description": "Ghostty: Sync tmux pane and aerospace window navigation",
     "manipulators": [
         {
             "type": "basic",
@@ -32,7 +32,7 @@
                 {
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
-                        "^org\\.alacritty$"
+                        "^com\\.mitchellh\\.ghostty$"
                     ]
                 }
             ]
@@ -68,7 +68,7 @@
                 {
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
-                        "^org\\.alacritty$"
+                        "^com\\.mitchellh\\.ghostty$"
                     ]
                 }
             ]
@@ -104,7 +104,7 @@
                 {
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
-                        "^org\\.alacritty$"
+                        "^com\\.mitchellh\\.ghostty$"
                     ]
                 }
             ]
@@ -140,7 +140,7 @@
                 {
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
-                        "^org\\.alacritty$"
+                        "^com\\.mitchellh\\.ghostty$"
                     ]
                 }
             ]
