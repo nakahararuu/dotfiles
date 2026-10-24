@@ -1,24 +1,33 @@
+# chezmoi:template:left-delimiter="[[" right-delimiter="]]"
 # sbx env user defaults (~/.sbxenv.yaml): the "小・中規模の機能開発" sandbox from
 # https://github.com/nakahararuu/sbx-kits/wiki, so that a bare `sbx env create`
 # (create only) or `sbx env run` (create + attach) in a project builds it.
 # Spec: https://docs.docker.com/ai/sandboxes/configuration/environment-files/
 #
 # Prerequisites (host, once):
-# - sbx v0.48+ (git-ssh-sign needs the ssh-agent@1 capability, sbx-kits'
-#   sample kits use kit.env; both landed in v0.48.0)
-# - allow the git kit sources (this replaces the whole allowlist):
-#     sbx settings set kit.allowedSources '["docker.io/","github.com/docker/","github.com/nakahararuu/"]'
-# - for git-ssh-sign: SSH agent forwarding on (`sbx settings get
-#   ssh.agentForwardingEnabled` is true; `sbx daemon restart` after changing it)
-#   and the signing key loaded in the host agent (`ssh-add ~/.ssh/id_ed25519`)
+[[- if eq .machineType "biz" ]]
+# - sbx v0.49.1+ (git-ssh-sign's ssh-agent@1 capability needs v0.48.0, and
+#   v0.49.1 keeps kit-granted SSH-agent access working across a daemon restart)
+[[- else ]]
+# - sbx v0.45+ (kit-spec v3 support)
+[[- end ]]
+# - allow the git kit source (this replaces the whole allowlist):
+#     sbx settings set kit.allowedSources '["docker.io/","github.com/nakahararuu/"]'
+# - chrome-devtools-host: launch Chrome on the host with remote debugging, see
+#   https://github.com/nakahararuu/sbx-kits/tree/main/chrome-devtools-host#readme
+[[- if eq .machineType "biz" ]]
+# - git-ssh-sign: SSH agent forwarding on (`sbx settings get
+#   ssh.agentForwardingEnabled` is true; `sbx daemon restart` after changing it).
+#   The signing key is loaded into the host agent by fish (conf.d/ssh.fish).
+[[- end ]]
 #
 # Notes:
 # - The sandbox is named sbx-kit-claude-<directory> (user defaults can't set
 #   `name`); pass --name to override.
 # - Clone mode needs the project directory to be a Git repository (and not a
 #   linked worktree). Use `sbx env create --clone=false` elsewhere.
-# - Kit changes (e.g. bumping the Claude Code tag) only apply to newly created
-#   sandboxes: `sbx env rm` then `sbx env create`.
+# - Kit changes (e.g. a newer image) only apply to newly created sandboxes:
+#   `sbx env rm` then `sbx env create`.
 # - A project-level sbxenv.yaml is merged on top (scalars override, lists such
 #   as `kits` concatenate), so it must also use v3 kits only.
 # - Passing a path (`sbx env create <path>`) skips this file.
@@ -38,12 +47,17 @@ kits:
   # The Claude Code workload. Bump the tag to update Claude Code.
   - docker.io/docker/sbx-kit-claude:2.1.267
 
-  # docker/sbx-kits-contrib: its default branch still holds v2 kits, so pin
-  # the v3 branch.
-  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=claude-sbx-statusline"
-  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=git-ssh-sign"
-  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=mise"
-  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=neovim"
+  # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
+  # (no need to build them from source).
+  - docker.io/sbx/claude-sbx-statusline:latest
+[[- if eq .machineType "biz" ]]
+  # Only biz machines sign commits on the host (private_dot_config/git), and
+  # git-ssh-sign makes commits fail outright when no signing key is available,
+  # so private machines leave it out.
+  - docker.io/sbx/git-ssh-sign:latest
+[[- end ]]
+  - docker.io/sbx/mise:latest
+  - docker.io/sbx/neovim:latest
 
   # nakahararuu/sbx-kits (kit-spec v3 on main since nakahararuu/sbx-kits#29)
   - "git+https://github.com/nakahararuu/sbx-kits.git#dir=chrome-devtools-host"
