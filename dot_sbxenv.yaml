@@ -1,0 +1,55 @@
+# sbx env user defaults (~/.sbxenv.yaml): the "小・中規模の機能開発" sandbox from
+# https://github.com/nakahararuu/sbx-kits/wiki, so that a bare `sbx env create`
+# (create only) or `sbx env run` (create + attach) in a project builds it.
+# Spec: https://docs.docker.com/ai/sandboxes/configuration/environment-files/
+#
+# Prerequisites (host, once):
+# - sbx v0.48+ (git-ssh-sign needs the ssh-agent@1 capability, sbx-kits'
+#   sample kits use kit.env; both landed in v0.48.0)
+# - allow the git kit sources (this replaces the whole allowlist):
+#     sbx settings set kit.allowedSources '["docker.io/","github.com/docker/","github.com/nakahararuu/"]'
+# - for git-ssh-sign: SSH agent forwarding on (`sbx settings get
+#   ssh.agentForwardingEnabled` is true; `sbx daemon restart` after changing it)
+#   and the signing key loaded in the host agent (`ssh-add ~/.ssh/id_ed25519`)
+#
+# Notes:
+# - The sandbox is named sbx-kit-claude-<directory> (user defaults can't set
+#   `name`); pass --name to override.
+# - Clone mode needs the project directory to be a Git repository (and not a
+#   linked worktree). Use `sbx env create --clone=false` elsewhere.
+# - Kit changes (e.g. bumping the Claude Code tag) only apply to newly created
+#   sandboxes: `sbx env rm` then `sbx env create`.
+# - A project-level sbxenv.yaml is merged on top (scalars override, lists such
+#   as `kits` concatenate), so it must also use v3 kits only.
+# - Passing a path (`sbx env create <path>`) skips this file.
+schemaVersion: "1"
+
+# v3 kits only compose onto a v3 workload; the built-in `claude` agent name
+# selects v2 kits. `agent` is the last path component of the workload image.
+agent: sbx-kit-claude
+
+# User defaults may only point the workspace at the project directory (or a
+# subdirectory). `clone: true` matches the wiki's `sbx create --clone`.
+workspace:
+  path: ${{ env.projectDir }}
+  clone: true
+
+kits:
+  # The Claude Code workload. Bump the tag to update Claude Code.
+  - docker.io/docker/sbx-kit-claude:2.1.267
+
+  # docker/sbx-kits-contrib: its default branch still holds v2 kits, so pin
+  # the v3 branch.
+  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=claude-sbx-statusline"
+  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=git-ssh-sign"
+  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=mise"
+  - "git+https://github.com/docker/sbx-kits-contrib.git#ref=v3&dir=neovim"
+
+  # nakahararuu/sbx-kits (kit-spec v3 on main since nakahararuu/sbx-kits#29)
+  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=chrome-devtools-host"
+  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=claude-documentation"
+  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=claude-plugins-small-medium"
+  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=docker-amd64"
+  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=langfuse-claude"
+  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=mise-runtimes"
+  - "git+https://github.com/nakahararuu/sbx-kits.git#dir=nakahararuu-claude-plugins"

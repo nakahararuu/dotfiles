@@ -24,6 +24,7 @@
 *   `private_dot_config/`: 以下の設定ファイル群を含みます:
     *   `alacritty`, `aerospace`, `mise`, `borders`, `direnv`, `git`, `ideavim`, `nvim`, `fish`, `karabiner`, `ripgrep`, `tmux`
 *   `ghq/`: 組織やユーザーごとに異なる Git 設定を適用するためのテンプレート。
+*   `dot_sbxenv.yaml`: Docker Sandboxes の `sbx env` 用ユーザーデフォルト（`~/.sbxenv.yaml`）。引数なしの `sbx env create` で [sbx-kits wiki](https://github.com/nakahararuu/sbx-kits/wiki) の「小・中規模の機能開発」サンドボックスを作る。前提条件はファイル先頭のコメントを参照。
 
 ## 使用方法とコマンド
 
