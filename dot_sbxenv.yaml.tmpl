@@ -43,6 +43,13 @@ workspace:
   path: ${{ env.projectDir }}
   clone: true
 
+# Sandbox-wide environment variables. The neovim kit only exports EDITOR/VISUAL
+# from /etc/profile.d (login shells), which Claude Code's process never reads,
+# so Ctrl+G would not open an external editor without this.
+env:
+  EDITOR: nvim
+  VISUAL: nvim
+
 kits:
   # The Claude Code workload. Bump the tag to update Claude Code.
   - docker.io/docker/sbx-kit-claude:2.1.267
