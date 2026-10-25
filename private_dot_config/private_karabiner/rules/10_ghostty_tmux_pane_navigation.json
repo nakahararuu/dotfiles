@@ -16,7 +16,11 @@
             },
             "to": [
                 {
-                    "key_code": "f19"
+                    "key_code": "p",
+                    "modifiers": [
+                        "left_control",
+                        "left_shift"
+                    ]
                 },
                 {
                     "key_code": "h",
@@ -49,7 +53,11 @@
             },
             "to": [
                 {
-                    "key_code": "f19"
+                    "key_code": "p",
+                    "modifiers": [
+                        "left_control",
+                        "left_shift"
+                    ]
                 },
                 {
                     "key_code": "j",
@@ -82,7 +90,11 @@
             },
             "to": [
                 {
-                    "key_code": "f19"
+                    "key_code": "p",
+                    "modifiers": [
+                        "left_control",
+                        "left_shift"
+                    ]
                 },
                 {
                     "key_code": "k",
@@ -115,7 +127,11 @@
             },
             "to": [
                 {
-                    "key_code": "f19"
+                    "key_code": "p",
+                    "modifiers": [
+                        "left_control",
+                        "left_shift"
+                    ]
                 },
                 {
                     "key_code": "l",
