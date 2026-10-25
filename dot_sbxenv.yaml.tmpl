@@ -54,14 +54,40 @@ env:
 
 # Host commands run before every `sbx env create`/`run`. Load SSH keys into the
 # host agent: the git-ssh-sign signing key when `git.signingkey` is set (biz),
-# otherwise ssh-add's default keys. A shell logged in over SSH has no
-# SSH_AUTH_SOCK (macOS's launchd only sets it for the GUI session), so fall back
-# to launchd's agent socket, which is the agent the sbx daemon forwards when
-# started from the GUI session.
+# otherwise ssh-add's default keys.
+# A shell logged in over SSH has no SSH_AUTH_SOCK (macOS's launchd only sets it
+# for the GUI session), so look for launchd's agent socket instead: the sbx
+# daemon forwards that agent when started from the GUI session. Each candidate
+# is probed with `ssh-add -l`, which only exits 0, or 1 with "The agent has no
+# identities.", when it talked to an ssh-agent, so another launchd socket is
+# never picked. Wrapped in `sh -c` because the command runs in the user's shell
+# (fish), and the timeout guards against a socket that never answers.
 lifecycle:
   initialize:
     - name: Load SSH keys
-      command: sh -c 'export SSH_AUTH_SOCK="${SSH_AUTH_SOCK:-$(ls /var/run/com.apple.launchd.*/Listeners 2>/dev/null | head -1)}"; exec ssh-add -q[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]'
+      timeout: 1m
+      command: |
+        sh -c '
+          is_agent() {
+            out=$(SSH_AUTH_SOCK="$1" ssh-add -l 2>&1) ||
+              [ "$out" = "The agent has no identities." ]
+          }
+          if [ -z "$SSH_AUTH_SOCK" ] || ! is_agent "$SSH_AUTH_SOCK"; then
+            SSH_AUTH_SOCK=
+            for s in /var/run/com.apple.launchd.*/Listeners; do
+              if [ -S "$s" ] && is_agent "$s"; then SSH_AUTH_SOCK=$s; break; fi
+            done
+          fi
+          if [ -z "$SSH_AUTH_SOCK" ]; then
+            echo "no ssh-agent found (SSH_AUTH_SOCK or launchd socket)" >&2
+            exit 1
+          fi
+          export SSH_AUTH_SOCK
+          ssh-add -q "$@" || {
+            echo "ssh-add failed; does the key file exist? (ssh-keygen)" >&2
+            exit 1
+          }
+        ' sh[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]
 
 kits:
   # The Claude Code workload. Bump the tag to update Claude Code.
