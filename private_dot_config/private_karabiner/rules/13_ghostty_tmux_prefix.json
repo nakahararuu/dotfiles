@@ -1,5 +1,5 @@
 {
-    "description": "Ghostty: Use super_key+a as tmux prefix (sent as F13)",
+    "description": "Ghostty: Use super_key+a as tmux prefix (sent as Shift+F12)",
     "manipulators": [
         {
             "type": "basic",
@@ -16,7 +16,10 @@
             },
             "to": [
                 {
-                    "key_code": "f13"
+                    "key_code": "f12",
+                    "modifiers": [
+                        "left_shift"
+                    ]
                 }
             ],
             "conditions": [
