@@ -1,5 +1,8 @@
-# prefix key (F19 is sent by karabiner on super_key+a in Ghostty)
-set -g prefix F19
+# prefix key (F21 is sent by karabiner on super_key+a in Ghostty; tmux has no
+# built-in name for keys beyond F12, so register the raw escape sequence
+# ourselves instead of relying on a coincidental name match)
+set -s user-keys[0] "\033[42~"
+set -g prefix User0
 unbind C-b
 
 # List of plugins
