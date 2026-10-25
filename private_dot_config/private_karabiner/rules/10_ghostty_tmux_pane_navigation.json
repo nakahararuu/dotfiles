@@ -16,7 +16,7 @@
             },
             "to": [
                 {
-                    "key_code": "p",
+                    "key_code": "t",
                     "modifiers": [
                         "left_control",
                         "left_shift"
@@ -53,7 +53,7 @@
             },
             "to": [
                 {
-                    "key_code": "p",
+                    "key_code": "t",
                     "modifiers": [
                         "left_control",
                         "left_shift"
@@ -90,7 +90,7 @@
             },
             "to": [
                 {
-                    "key_code": "p",
+                    "key_code": "t",
                     "modifiers": [
                         "left_control",
                         "left_shift"
@@ -127,7 +127,7 @@
             },
             "to": [
                 {
-                    "key_code": "p",
+                    "key_code": "t",
                     "modifiers": [
                         "left_control",
                         "left_shift"
