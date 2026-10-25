@@ -2,6 +2,12 @@
 set -g prefix C-S-t
 unbind C-b
 
+# SSH経由でattach/作成したセッションはprefixをCtrl+Tにする
+# (session_idは"$0"形式なのでシェルに展開されないようシングルクォートで渡す)
+set-hook -g client-attached "run-shell \"{{ .configDir }}/tmux/ssh-prefix.sh '#{socket_path}' '#{session_id}'\""
+set-hook -g session-created "run-shell \"{{ .configDir }}/tmux/ssh-prefix.sh '#{socket_path}' '#{session_id}'\""
+bind C-t send-prefix
+
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
