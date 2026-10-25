@@ -61,7 +61,7 @@ env:
 lifecycle:
   initialize:
     - name: Load SSH keys
-      command: sh -c 'export SSH_AUTH_SOCK="${SSH_AUTH_SOCK:-$(ls /private/tmp/com.apple.launchd.*/Listeners 2>/dev/null | head -1)}"; exec ssh-add -q[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]'
+      command: sh -c 'export SSH_AUTH_SOCK="${SSH_AUTH_SOCK:-$(ls /var/run/com.apple.launchd.*/Listeners 2>/dev/null | head -1)}"; exec ssh-add -q[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]'
 
 kits:
   # The Claude Code workload. Bump the tag to update Claude Code.
