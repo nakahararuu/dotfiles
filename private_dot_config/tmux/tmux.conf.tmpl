@@ -16,8 +16,6 @@ set -g @plugin 'seebi/tmux-colors-solarized'
 set -g @plugin 'laktak/extrakto'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'tmux-plugins/tmux-open'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # Initialize TMUX plugin manager 
 if "test ! -d {{ .configDir }}/tmux/plugins/tpm" \
@@ -53,10 +51,6 @@ bind "c"    new-window -c "#{pane_current_path}"
 
 # default shell
 set-option -g default-shell '{{ output "brew" "--prefix" "fish" | trim }}/bin/fish'
-
-# saving/restoring of tmux environment
-set -g @continuum-restore 'on'
-set -g @resurrect-dir '$HOME/.local/state/resurrect'
 
 # look and feel
 set -g window-style 'fg=colour247,bg=colour236'
