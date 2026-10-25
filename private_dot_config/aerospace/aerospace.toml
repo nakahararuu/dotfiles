@@ -52,7 +52,7 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
 
 [mode.main.binding]
     # Enter window_control mode → borders turn red
-    alt-a = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh', 'mode window_control']
+    ctrl-shift-alt-cmd-m = ['exec-and-forget ~/.config/aerospace/scripts/update-borders.sh', 'mode window_control']
 
     alt-tab = 'focus dfs-next --boundaries-action wrap-around-the-workspace'
 
