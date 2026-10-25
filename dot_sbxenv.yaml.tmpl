@@ -54,11 +54,14 @@ env:
 
 # Host commands run before every `sbx env create`/`run`. Load SSH keys into the
 # host agent: the git-ssh-sign signing key when `git.signingkey` is set (biz),
-# otherwise ssh-add's default keys.
+# otherwise ssh-add's default keys. A shell logged in over SSH has no
+# SSH_AUTH_SOCK (macOS's launchd only sets it for the GUI session), so fall back
+# to launchd's agent socket, which is the agent the sbx daemon forwards when
+# started from the GUI session.
 lifecycle:
   initialize:
     - name: Load SSH keys
-      command: ssh-add -q[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]
+      command: sh -c 'export SSH_AUTH_SOCK="${SSH_AUTH_SOCK:-$(ls /private/tmp/com.apple.launchd.*/Listeners 2>/dev/null | head -1)}"; exec ssh-add -q[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]'
 
 kits:
   # The Claude Code workload. Bump the tag to update Claude Code.
