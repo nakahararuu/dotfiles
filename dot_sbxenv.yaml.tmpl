@@ -5,23 +5,18 @@
 # Spec: https://docs.docker.com/ai/sandboxes/configuration/environment-files/
 #
 # Prerequisites (host, once):
-[[- if eq .machineType "biz" ]]
 # - sbx v0.49.1+ (git-ssh-sign's ssh-agent@1 capability needs v0.48.0, and
 #   v0.49.1 keeps kit-granted SSH-agent access working across a daemon restart)
-[[- else ]]
-# - sbx v0.45+ (kit-spec v3 support)
-[[- end ]]
 # - allow the ghcr.io kit source (this replaces the whole allowlist):
 #     sbx settings set kit.allowedSources '["docker.io/","ghcr.io/nakahararuu/"]'
 # - chrome-devtools-host: launch Chrome on the host with remote debugging, see
 #   https://github.com/nakahararuu/sbx-kits/tree/main/chrome-devtools-host#readme
-[[- if eq .machineType "biz" ]]
 # - git-ssh-sign: SSH agent forwarding on (`sbx settings get
 #   ssh.agentForwardingEnabled` is true; `sbx daemon restart` after changing it).
-#   The signing key is loaded into the host agent by the `initialize`
-#   lifecycle command below. Lifecycle commands need approval on every run
-#   unless `sbx settings set env.rememberHostCommands true`.
-[[- end ]]
+#   The kit signs with a key from the forwarded agent (one registered as a
+#   GitHub signing key if any, else the first), which the `initialize`
+#   lifecycle command below loads into the host agent. Lifecycle commands need
+#   approval on every run unless `sbx settings set env.rememberHostCommands true`.
 #
 # Notes:
 # - The sandbox is named sbx-kit-claude-<directory> (user defaults can't set
@@ -81,12 +76,9 @@ kits:
   # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
   # (no need to build them from source).
   - docker.io/sbx/claude-sbx-statusline:latest
-[[- if eq .machineType "biz" ]]
-  # Only biz machines sign commits on the host (private_dot_config/git), and
-  # git-ssh-sign makes commits fail outright when no signing key is available,
-  # so private machines leave it out.
+  # Commits fail outright when the forwarded agent has no key, so this relies
+  # on the `initialize` lifecycle command above.
   - docker.io/sbx/git-ssh-sign:latest
-[[- end ]]
   - docker.io/sbx/mise:latest
   - docker.io/sbx/neovim:latest
 
