@@ -2,6 +2,12 @@
 set -g prefix C-S-t
 unbind C-b
 
+# SSH経由でattach/作成したセッションはprefixをCtrl+Tにする
+# (session_idは"$0"形式なのでシェルに展開されないようシングルクォートで渡す)
+set-hook -g client-attached "run-shell \"{{ .configDir }}/tmux/ssh-prefix.sh '#{socket_path}' '#{session_id}'\""
+set-hook -g session-created "run-shell \"{{ .configDir }}/tmux/ssh-prefix.sh '#{socket_path}' '#{session_id}'\""
+bind C-t send-prefix
+
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
@@ -10,8 +16,6 @@ set -g @plugin 'seebi/tmux-colors-solarized'
 set -g @plugin 'laktak/extrakto'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'tmux-plugins/tmux-open'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # Initialize TMUX plugin manager 
 if "test ! -d {{ .configDir }}/tmux/plugins/tpm" \
@@ -47,10 +51,6 @@ bind "c"    new-window -c "#{pane_current_path}"
 
 # default shell
 set-option -g default-shell '{{ output "brew" "--prefix" "fish" | trim }}/bin/fish'
-
-# saving/restoring of tmux environment
-set -g @continuum-restore 'on'
-set -g @resurrect-dir '$HOME/.local/state/resurrect'
 
 # look and feel
 set -g window-style 'fg=colour247,bg=colour236'
