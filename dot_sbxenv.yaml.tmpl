@@ -5,21 +5,18 @@
 # Spec: https://docs.docker.com/ai/sandboxes/configuration/environment-files/
 #
 # Prerequisites (host, once):
-[[- if eq .machineType "biz" ]]
 # - sbx v0.49.1+ (git-ssh-sign's ssh-agent@1 capability needs v0.48.0, and
 #   v0.49.1 keeps kit-granted SSH-agent access working across a daemon restart)
-[[- else ]]
-# - sbx v0.45+ (kit-spec v3 support)
-[[- end ]]
 # - allow the ghcr.io kit source (this replaces the whole allowlist):
 #     sbx settings set kit.allowedSources '["docker.io/","ghcr.io/nakahararuu/"]'
 # - chrome-devtools-host: launch Chrome on the host with remote debugging, see
 #   https://github.com/nakahararuu/sbx-kits/tree/main/chrome-devtools-host#readme
-[[- if eq .machineType "biz" ]]
 # - git-ssh-sign: SSH agent forwarding on (`sbx settings get
 #   ssh.agentForwardingEnabled` is true; `sbx daemon restart` after changing it).
-#   The signing key is loaded into the host agent by fish (conf.d/ssh.fish).
-[[- end ]]
+#   The kit signs with a key from the forwarded agent (one registered as a
+#   GitHub signing key if any, else the first), which the `initialize`
+#   lifecycle command below loads into the host agent. Lifecycle commands need
+#   approval on every run unless `sbx settings set env.rememberHostCommands true`.
 #
 # Notes:
 # - The sandbox is named sbx-kit-claude-<directory> (user defaults can't set
@@ -50,6 +47,28 @@ env:
   EDITOR: nvim
   VISUAL: nvim
 
+# Host commands run before every `sbx env create`/`run`. Load SSH keys into the
+# host agent: the git-ssh-sign signing key when `git.signingkey` is set (biz),
+# otherwise ssh-add's default keys.
+# A shell logged in over SSH has no SSH_AUTH_SOCK (launchd only sets it for the
+# GUI session), so also try launchd's sockets, using the first one where
+# `ssh-add -l` reaches an ssh-agent (exit 0, or 1 with "no identities").
+# `sh -c` because the command runs in the user's shell (fish).
+lifecycle:
+  initialize:
+    - name: Load SSH keys
+      timeout: 1m
+      command: |
+        sh -c '
+          for s in "$SSH_AUTH_SOCK" /var/run/com.apple.launchd.*/Listeners; do
+            out=$(SSH_AUTH_SOCK=$s ssh-add -l 2>&1) ||
+              [ "$out" = "The agent has no identities." ] || continue
+            SSH_AUTH_SOCK=$s ssh-add -q "$@" && exit
+            echo "ssh-add failed; does the key file exist?" >&2; exit 1
+          done
+          echo "no ssh-agent found" >&2; exit 1
+        ' sh[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]
+
 kits:
   # The Claude Code workload. Bump the tag to update Claude Code.
   - docker.io/docker/sbx-kit-claude:2.1.267
@@ -57,12 +76,9 @@ kits:
   # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
   # (no need to build them from source).
   - docker.io/sbx/claude-sbx-statusline:latest
-[[- if eq .machineType "biz" ]]
-  # Only biz machines sign commits on the host (private_dot_config/git), and
-  # git-ssh-sign makes commits fail outright when no signing key is available,
-  # so private machines leave it out.
+  # Commits fail outright when the forwarded agent has no key, so this relies
+  # on the `initialize` lifecycle command above.
   - docker.io/sbx/git-ssh-sign:latest
-[[- end ]]
   - docker.io/sbx/mise:latest
   - docker.io/sbx/neovim:latest
 
