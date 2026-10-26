@@ -1,4 +1,3 @@
-# chezmoi:template:left-delimiter="[[" right-delimiter="]]"
 # sbx env user defaults (~/.sbxenv.yaml): the "小・中規模の機能開発" sandbox from
 # https://github.com/nakahararuu/sbx-kits/wiki, so that a bare `sbx env create`
 # (create only) or `sbx env run` (create + attach) in a project builds it.
@@ -48,8 +47,8 @@ env:
   VISUAL: nvim
 
 # Host commands run before every `sbx env create`/`run`. Load SSH keys into the
-# host agent: the git-ssh-sign signing key when `git.signingkey` is set (biz),
-# otherwise ssh-add's default keys.
+# host agent: the git-ssh-sign signing key when git's `user.signingkey` is set
+# (biz), otherwise ssh-add's default keys.
 # A shell logged in over SSH has no SSH_AUTH_SOCK (launchd only sets it for the
 # GUI session), so also try launchd's sockets, using the first one where
 # `ssh-add -l` reaches an ssh-agent (exit 0, or 1 with "no identities").
@@ -60,18 +59,19 @@ lifecycle:
       timeout: 1m
       command: |
         sh -c '
+          key=$(git config --type=path --get user.signingkey)
           for s in "$SSH_AUTH_SOCK" /var/run/com.apple.launchd.*/Listeners; do
             out=$(SSH_AUTH_SOCK=$s ssh-add -l 2>&1) ||
               [ "$out" = "The agent has no identities." ] || continue
-            SSH_AUTH_SOCK=$s ssh-add -q "$@" && exit
+            SSH_AUTH_SOCK=$s ssh-add -q ${key:+"$key"} && exit
             echo "ssh-add failed; does the key file exist?" >&2; exit 1
           done
           echo "no ssh-agent found" >&2; exit 1
-        ' sh[[ with dig "git" "signingkey" "" . ]] [[ . ]][[ end ]]
+        '
 
 kits:
-  # The Claude Code workload. Bump the tag to update Claude Code.
-  - docker.io/docker/sbx-kit-claude:2.1.267
+  # The Claude Code workload, tracking the latest Claude Code release.
+  - docker.io/docker/sbx-kit-claude:latest
 
   # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
   # (no need to build them from source).
