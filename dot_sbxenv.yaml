@@ -70,8 +70,8 @@ lifecycle:
         '
 
 kits:
-  # The Claude Code workload, tracking the latest Claude Code release.
-  - docker.io/docker/sbx-kit-claude:latest
+  # The Claude Code workload. Bump the tag to update Claude Code.
+  - docker.io/docker/sbx-kit-claude:2.1.267
 
   # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
   # (no need to build them from source).
