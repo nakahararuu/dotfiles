@@ -70,6 +70,9 @@ cask "nakahararuu/formulae/aerospace"
 brew "nakahararuu/formulae/borders"
 cask "homerow"
 
+# network
+cask "tailscale-app"
+
 # communication tools
 cask "discord"
 cask "slack"
