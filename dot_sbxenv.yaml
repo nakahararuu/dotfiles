@@ -81,11 +81,6 @@ kits:
   - docker.io/sbx/git-ssh-sign:latest
   - docker.io/sbx/mise:latest
   - docker.io/sbx/neovim:latest
-  # Headless Chromium, sandbox-local, for the agent to drive on its own
-  # (screenshots, scraping, e2e tests) without a human watching. Pair with
-  # chrome-devtools-host below, which drives the host's visible Chrome instead:
-  # use that one when debugging together with the user so they can see the
-  # page, use this one when the agent is debugging solo.
   - docker.io/sbx/playwright:latest
 
   # nakahararuu/sbx-kits kits, as the prebuilt v3 images its CI publishes from
