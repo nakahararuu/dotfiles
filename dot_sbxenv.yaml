@@ -81,6 +81,7 @@ kits:
   - docker.io/sbx/git-ssh-sign:latest
   - docker.io/sbx/mise:latest
   - docker.io/sbx/neovim:latest
+  - docker.io/sbx/playwright:latest
 
   # nakahararuu/sbx-kits kits, as the prebuilt v3 images its CI publishes from
   # main. Git references would make sbx build them on the host, which needs a
