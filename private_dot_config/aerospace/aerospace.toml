@@ -20,8 +20,13 @@ accordion-padding = 30
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
-# Move mouse to center of focused window on any focus change
-on-focus-changed = ['move-mouse window-force-center']
+# Move mouse to center of focused window on any focus change.
+# Also refresh the border color: moving focus (e.g. focus --dfs-index)
+# exits fullscreen, so the yellow border must be reset here.
+on-focus-changed = [
+    'move-mouse window-force-center',
+    'exec-and-forget ~/.config/aerospace/scripts/update-borders.sh'
+]
 
 # Prevent cmd-h from hiding windows (replaces skhd cmd-h intercept)
 automatically-unhide-macos-hidden-apps = true
