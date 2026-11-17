@@ -66,7 +66,7 @@ kits:
   # reproducible; bump a tag to update that kit (then recreate the sandbox).
 
   # The Claude Code workload.
-  - docker.io/docker/sbx-kit-claude:2.1.316
+  - docker.io/docker/sbx-kit-claude:2.1.314
 
   # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
   # (no need to build them from source).
