@@ -62,25 +62,28 @@ lifecycle:
       command: sh -c 'k=$(git config --type=path --get user.signingkey); ssh-add -q ${k:+"$k"}'
 
 kits:
-  # The Claude Code workload. Bump the tag to update Claude Code.
-  - docker.io/docker/sbx-kit-claude:2.1.267
+  # Every kit is pinned to a release tag (not `latest`) so a sandbox is
+  # reproducible; bump a tag to update that kit (then recreate the sandbox).
+
+  # The Claude Code workload.
+  - docker.io/docker/sbx-kit-claude:2.1.316
 
   # docker/sbx-kits-contrib kits, as the prebuilt v3 images it publishes
   # (no need to build them from source).
-  - docker.io/sbx/claude-sbx-statusline:latest
+  - docker.io/sbx/claude-sbx-statusline:1.0.0
   # Commits fail outright when the forwarded agent has no key, so this relies
   # on the `initialize` lifecycle command above.
-  - docker.io/sbx/git-ssh-sign:latest
-  - docker.io/sbx/mise:latest
-  - docker.io/sbx/neovim:latest
-  - docker.io/sbx/playwright:latest
+  - docker.io/sbx/git-ssh-sign:1.0.3
+  - docker.io/sbx/mise:2026.11.9-0
+  - docker.io/sbx/neovim:0.12.5
+  - docker.io/sbx/playwright:1.65.1-0
 
   # nakahararuu/sbx-kits kits, as the prebuilt v3 images its CI publishes from
   # main. Git references would make sbx build them on the host, which needs a
   # BuildKit with the OCI exporter (Docker Desktop's docker driver fails).
-  - ghcr.io/nakahararuu/sbx-kits/chrome-devtools-host:latest
-  - ghcr.io/nakahararuu/sbx-kits/claude-documentation:latest
-  - ghcr.io/nakahararuu/sbx-kits/claude-plugins-small-medium:latest
-  - ghcr.io/nakahararuu/sbx-kits/docker-amd64:latest
-  - ghcr.io/nakahararuu/sbx-kits/mise-runtimes:latest
-  - ghcr.io/nakahararuu/sbx-kits/nakahararuu-claude-plugins:latest
+  - ghcr.io/nakahararuu/sbx-kits/chrome-devtools-host:1.0.2
+  - ghcr.io/nakahararuu/sbx-kits/claude-documentation:1.0.0
+  - ghcr.io/nakahararuu/sbx-kits/claude-plugins-small-medium:1.0.0
+  - ghcr.io/nakahararuu/sbx-kits/docker-amd64:1.0.0
+  - ghcr.io/nakahararuu/sbx-kits/mise-runtimes:1.0.0
+  - ghcr.io/nakahararuu/sbx-kits/nakahararuu-claude-plugins:1.0.1
