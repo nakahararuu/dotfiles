@@ -60,8 +60,9 @@ lifecycle:
       command: sh -c 'k=$(git config --type=path --get user.signingkey); ssh-add -q ${k:+"$k"}'
 
 # MCP servers for the sandbox. A `url` (remote) server is registered host-wide
-# and survives `sbx env rm`; the OAuth sign-in it requires happens on the host
-# (sbx discovers the issuer from the server), not in this file.
+# and survives `sbx env rm`. When a project sbxenv.yaml declares a server with
+# the same name, its entry wins. The schema has no transport/auth fields, so
+# authentication (e.g. OAuth) is not configured in this file.
 mcp:
   servers:
     # AWS MCP Server (streamable HTTP, OAuth via AWS sign-in, ap-northeast-1).
