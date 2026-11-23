@@ -59,6 +59,15 @@ lifecycle:
       timeout: 1m
       command: sh -c 'k=$(git config --type=path --get user.signingkey); ssh-add -q ${k:+"$k"}'
 
+# MCP servers for the sandbox. A `url` (remote) server is registered host-wide
+# and survives `sbx env rm`; the OAuth sign-in it requires happens on the host
+# (sbx discovers the issuer from the server), not in this file.
+mcp:
+  servers:
+    # AWS MCP Server (streamable HTTP, OAuth via AWS sign-in, ap-northeast-1).
+    - name: aws
+      url: https://aws-mcp.ap-northeast-1.api.aws/mcp
+
 kits:
   # Every kit is pinned to a release tag (not `latest`) so a sandbox is
   # reproducible; bump a tag to update that kit (then recreate the sandbox).
