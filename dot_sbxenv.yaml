@@ -14,6 +14,28 @@
 #   GitHub signing key if any, else the first), which the `initialize`
 #   lifecycle command below loads into the host agent. Lifecycle commands need
 #   approval on every run unless `sbx settings set env.rememberHostCommands true`.
+# - Slack / Google Workspace MCP (optional; `postCreate` below skips any that
+#   aren't registered). Neither supports Dynamic Client Registration, so they
+#   are registered once on the host with a pre-registered OAuth client instead
+#   of in `mcp.servers` (which can't carry a client id):
+#     # Slack: the public client id Slack documents for Claude Code
+#     # (https://docs.slack.dev/ai/slack-mcp-server/connect-to-harnesses).
+#     # The workspace admin must have approved the MCP integration.
+#     sbx mcp add slack --url https://mcp.slack.com/mcp \
+#       --client-id 1601185624273.8899143856786 --callback-port 3118
+#     # Google Workspace (Developer Preview): create a "Desktop app" OAuth
+#     # client with "Use this client for an AI-powered agent" checked
+#     # (https://developers.google.com/workspace/guides/configure-mcp-servers),
+#     # then for each server below:
+#     sbx secret set mcp:google-gmail:client_secret
+#     sbx mcp add google-gmail --url https://gmailmcp.googleapis.com/mcp/v1 \
+#       --client-id <CLIENT_ID>
+#   Google servers (name -> URL): google-gmail -> gmailmcp,
+#   google-calendar -> calendarmcp, google-drive -> drivemcp,
+#   google-docs -> docsmcp, google-sheets -> sheetsmcp,
+#   google-slides -> slidesmcp, google-workspace -> workspacemcp
+#   (all https://<host>.googleapis.com/mcp/v1; google-workspace is Universal
+#   Search across Gmail/Drive/Calendar/Chat).
 #
 # Notes:
 # - The sandbox is named sbx-kit-claude-<directory> (user defaults can't set
@@ -58,11 +80,26 @@ lifecycle:
     - name: Load SSH keys
       timeout: 1m
       command: sh -c 'k=$(git config --type=path --get user.signingkey); ssh-add -q ${k:+"$k"}'
+  # Attach the host-registered Slack / Google Workspace MCP servers (see
+  # Prerequisites) to a newly created sandbox. They stay attached across
+  # restarts; postCreate doesn't run when attaching to an existing sandbox.
+  # A server that isn't registered on this host is skipped with a warning.
+  postCreate:
+    - name: Load Slack / Google Workspace MCP servers
+      timeout: 3m
+      command: >-
+        sh -c 'for s in slack google-gmail google-calendar google-drive
+        google-docs google-sheets google-slides google-workspace; do
+        sbx mcp load "$s" --sandbox "$SBX_SANDBOX_NAME" ||
+        echo "skipped MCP server $s (not registered on this host?)" >&2;
+        done'
 
 # MCP servers for the sandbox. A `url` (remote) server is registered host-wide
 # and survives `sbx env rm`. When a project sbxenv.yaml declares a server with
 # the same name, its entry wins. The schema has no transport/auth fields, so
-# authentication (e.g. OAuth) is not configured in this file.
+# authentication (e.g. OAuth) is not configured in this file; servers that
+# need a pre-registered OAuth client (Slack, Google Workspace) are registered
+# on the host and attached by the `postCreate` lifecycle command instead.
 mcp:
   servers:
     # AWS MCP Server (streamable HTTP, OAuth via AWS sign-in, ap-northeast-1).
